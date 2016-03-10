@@ -1,0 +1,22 @@
+
+
+Error starting at line : 2 in command -
+select  ossrc,
+	element_class,
+        cantidad,
+        round(cantidad-(cantidad*0.05)) OBJ_LOW,
+        round(cantidad+(cantidad*0.05)) OBJ_HI
+from (
+      SELECT  ELEMENT_CLASS,
+              COUNT(distinct element_name) AS CANTIDAD
+      FROM MULTIVENDOR_OBJECT2
+      WHERE ELEMENT_CLASS IN ('WCELL')
+      AND VALID_FINISH_DATE > SYSDATE
+      GROUP BY ELEMENT_CLASS)
+Error at Command Line : 2 Column : 9
+Error report -
+SQL Error: ORA-00904: "OSSRC": invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+

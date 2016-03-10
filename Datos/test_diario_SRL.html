@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF8'>
+  
+  <title>Responsive Table</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <style>
+  * { 
+    margin: 0; 
+    padding: 0; 
+  }
+  body { 
+    font: 14px/1.4 Georgia, Serif; 
+  }
+  
+  /* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #9B9B9B; 
+    text-align: left; 
+  }
+  @media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute;top: -9999px;left: -9999px;}
+    tr { border: 1px solid #9B9B9B; }
+    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
+    
+    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
+    
+    /*
+    Label the data
+    */
+td:nth-of-type(0):before { content: "FECHA"; }
+td:nth-of-type(1):before { content: "HORA"; }
+td:nth-of-type(2):before { content: "OSSRC"; }
+td:nth-of-type(3):before { content: "CANTIDAD"; }
+td:nth-of-type(4):before { content: "SRL_CNT"; }
+  }
+  
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    body { 
+      padding: 0; 
+      margin: 0; 
+      width: 320px; }
+    }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body { 
+      width: 495px; 
+    }
+  }
+  
+  </style>
+  <!--<![endif]-->
+<script type="text/javascript">
+
+lsearch = function(){
+  //this.term = document.getElementById('S').value.toUpperCase();
+  var s = document.getElementById('search').value.toLowerCase();
+  rows = document.getElementById('data').getElementsByTagName('TR');
+  for(var i=0;i<rows.length;i++){
+    if (s =="" ){
+      rows[i].style.display ='';
+    } else if ( rows[i].innerText.toLowerCase().indexOf(s) != -1 ) {
+      rows[i].style.display ='';
+    } else {
+      rows[i].style.display ='none';
+    }
+  }
+  this.time = false;
+}
+
+</script>
+</head>
+
+<body>
+<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="lsearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
+<table><thead><tr>	<th>FECHA</th>
+	<th>HORA</th>
+	<th>OSSRC</th>
+	<th>CANTIDAD</th>
+	<th>SRL_CNT</th>
+</tr></thead>
+<tbody id="data">
+
+	<tr>
+<td>07.03.2016 00</td>
+<td>00</td>
+<td>OSSRC3</td>
+<td align="right">22579</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 01</td>
+<td>01</td>
+<td>OSSRC3</td>
+<td align="right">22554</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 02</td>
+<td>02</td>
+<td>OSSRC3</td>
+<td align="right">22516</td>
+<td>22516</td>
+	</tr>
+	<tr>
+<td>07.03.2016 03</td>
+<td>03</td>
+<td>OSSRC3</td>
+<td align="right">22485</td>
+<td>22485</td>
+	</tr>
+	<tr>
+<td>07.03.2016 04</td>
+<td>04</td>
+<td>OSSRC3</td>
+<td align="right">22563</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 05</td>
+<td>05</td>
+<td>OSSRC3</td>
+<td align="right">22661</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 06</td>
+<td>06</td>
+<td>OSSRC3</td>
+<td align="right">22722</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 07</td>
+<td>07</td>
+<td>OSSRC3</td>
+<td align="right">22742</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 08</td>
+<td>08</td>
+<td>OSSRC3</td>
+<td align="right">22766</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 09</td>
+<td>09</td>
+<td>OSSRC3</td>
+<td align="right">22632</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 10</td>
+<td>10</td>
+<td>OSSRC3</td>
+<td align="right">22793</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 11</td>
+<td>11</td>
+<td>OSSRC3</td>
+<td align="right">22808</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 12</td>
+<td>12</td>
+<td>OSSRC3</td>
+<td align="right">22807</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 13</td>
+<td>13</td>
+<td>OSSRC3</td>
+<td align="right">22819</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 14</td>
+<td>14</td>
+<td>OSSRC3</td>
+<td align="right">22841</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 15</td>
+<td>15</td>
+<td>OSSRC3</td>
+<td align="right">22852</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 16</td>
+<td>16</td>
+<td>OSSRC3</td>
+<td align="right">22825</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 17</td>
+<td>17</td>
+<td>OSSRC3</td>
+<td align="right">22820</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 18</td>
+<td>18</td>
+<td>OSSRC3</td>
+<td align="right">22811</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 19</td>
+<td>19</td>
+<td>OSSRC3</td>
+<td align="right">22814</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 20</td>
+<td>20</td>
+<td>OSSRC3</td>
+<td align="right">22799</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 21</td>
+<td>21</td>
+<td>OSSRC3</td>
+<td align="right">22786</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 22</td>
+<td>22</td>
+<td>OSSRC3</td>
+<td align="right">22792</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>07.03.2016 23</td>
+<td>23</td>
+<td>OSSRC3</td>
+<td align="right">22766</td>
+<td><strong><font color="green" face="Comic Sans MS" size=3> OK </font></strong></td>
+	</tr>
+</tbody></table><!-- SQL:
+null--></body></html>

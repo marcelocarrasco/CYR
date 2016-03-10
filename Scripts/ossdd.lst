@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF8'>
+  
+  <title>Responsive Table</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <style>
+  * { 
+    margin: 0; 
+    padding: 0; 
+  }
+  body { 
+    font: 14px/1.4 Georgia, Serif; 
+  }
+  
+  /* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #9B9B9B; 
+    text-align: left; 
+  }
+  @media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute;top: -9999px;left: -9999px;}
+    tr { border: 1px solid #9B9B9B; }
+    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
+    
+    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
+    
+    /*
+    Label the data
+    */
+td:nth-of-type(0):before { content: "FECHA"; }
+td:nth-of-type(1):before { content: "OSSRC"; }
+td:nth-of-type(2):before { content: "SRL_CNT"; }
+td:nth-of-type(3):before { content: "TRF_CNT"; }
+td:nth-of-type(4):before { content: "CRS_CNT"; }
+td:nth-of-type(5):before { content: "HSW_CNT"; }
+td:nth-of-type(6):before { content: "CTP_CNT"; }
+td:nth-of-type(7):before { content: "RRC_CNT"; }
+td:nth-of-type(8):before { content: "YHO_CNT"; }
+td:nth-of-type(9):before { content: "SHO_CNT"; }
+td:nth-of-type(10):before { content: "IHO_CNT"; }
+td:nth-of-type(11):before { content: "CTW_CNT"; }
+td:nth-of-type(12):before { content: "CPI_CNT"; }
+td:nth-of-type(13):before { content: "L3I_CNT"; }
+td:nth-of-type(14):before { content: "PKT_CNT"; }
+  }
+  
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    body { 
+      padding: 0; 
+      margin: 0; 
+      width: 320px; }
+    }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body { 
+      width: 495px; 
+    }
+  }
+  
+  </style>
+  <!--<![endif]-->
+<script type="text/javascript">
+
+lsearch = function(){
+  //this.term = document.getElementById('S').value.toUpperCase();
+  var s = document.getElementById('search').value.toLowerCase();
+  rows = document.getElementById('data').getElementsByTagName('TR');
+  for(var i=0;i<rows.length;i++){
+    if (s =="" ){
+      rows[i].style.display ='';
+    } else if ( rows[i].innerText.toLowerCase().indexOf(s) != -1 ) {
+      rows[i].style.display ='';
+    } else {
+      rows[i].style.display ='none';
+    }
+  }
+  this.time = false;
+}
+
+</script>
+</head>
+
+<body>
+<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="lsearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
+<table><thead><tr>	<th>FECHA</th>
+	<th>OSSRC</th>
+	<th>SRL_CNT</th>
+	<th>TRF_CNT</th>
+	<th>CRS_CNT</th>
+	<th>HSW_CNT</th>
+	<th>CTP_CNT</th>
+	<th>RRC_CNT</th>
+	<th>YHO_CNT</th>
+	<th>SHO_CNT</th>
+	<th>IHO_CNT</th>
+	<th>CTW_CNT</th>
+	<th>CPI_CNT</th>
+	<th>L3I_CNT</th>
+	<th>PKT_CNT</th>
+</tr></thead>
+<tbody id="data">
+
+	<tr>
+<td>08.03.2016 00</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7395</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>269</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 01</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7535</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>140</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 02</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7450</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>55</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 03</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7378</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>49</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 04</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7376</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>40</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 05</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7452</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>101</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 06</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7267</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>262</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 07</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>470</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 08</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>598</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 09</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>702</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 10</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>772</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 11</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>827</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 12</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7156</td>
+<td>825</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 13</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>770</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 14</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>733</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 15</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>712</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 16</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>729</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 17</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>7484</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>790</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 18</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>755</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 19</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>788</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 20</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>762</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 21</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>687</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 22</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>563</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+	<tr>
+<td>08.03.2016 23</td>
+<td>OSSRC1</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>387</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+<td>&lt;strong&gt;&lt;font color="green" face="Comic Sans MS" size=2&gt; OK &lt;/font&gt;&lt;/strong&gt;</td>
+	</tr>
+</tbody></table><!-- SQL:
+null--></body></html>

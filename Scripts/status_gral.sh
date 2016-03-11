@@ -12,7 +12,7 @@ SELECT '/home/oracle/sqlcl/bin/sql -s harriague/HARRIAGUE@PERDIDO @/home/oracle/
   ||' '
   ||ROUND(cantidad+(cantidad*0.05))
   ||' '
-  ||';'
+  ||'/home/oracle/CYR/Datos/status_umts_gral_'||ossrc||'.html'
 FROM
   (SELECT ELEMENT_CLASS,
     OSSRC,

@@ -5,3 +5,6 @@ sed -i 's/&lt;/</g' $FILE
 sed -i 's/&gt;/>/g' $FILE
 sed -i 's/14px/10px/g' $FILE
 sed -i 's/Georgia/Verdana/g' $FILE
+sed -i '/<script type=/,/script>/d' $FILE
+sed -i '/<div><input /d' $FILE
+

@@ -15,7 +15,7 @@
     padding: 0; 
   }
   body { 
-    font: 14px/1.4 Georgia, Serif; 
+    font: 10px/1.4 Verdana, Serif; 
   }
   
   /* 
@@ -54,19 +54,20 @@
     */
 td:nth-of-type(0):before { content: "FECHA"; }
 td:nth-of-type(1):before { content: "OSSRC"; }
-td:nth-of-type(2):before { content: "SRL_CNT"; }
-td:nth-of-type(3):before { content: "TRF_CNT"; }
-td:nth-of-type(4):before { content: "CRS_CNT"; }
-td:nth-of-type(5):before { content: "HSW_CNT"; }
-td:nth-of-type(6):before { content: "CTP_CNT"; }
-td:nth-of-type(7):before { content: "RRC_CNT"; }
-td:nth-of-type(8):before { content: "YHO_CNT"; }
-td:nth-of-type(9):before { content: "SHO_CNT"; }
-td:nth-of-type(10):before { content: "IHO_CNT"; }
-td:nth-of-type(11):before { content: "CTW_CNT"; }
-td:nth-of-type(12):before { content: "CPI_CNT"; }
-td:nth-of-type(13):before { content: "L3I_CNT"; }
-td:nth-of-type(14):before { content: "PKT_CNT"; }
+td:nth-of-type(2):before { content: "CANTIDAD"; }
+td:nth-of-type(3):before { content: "SRL_CNT"; }
+td:nth-of-type(4):before { content: "TRF_CNT"; }
+td:nth-of-type(5):before { content: "CRS_CNT"; }
+td:nth-of-type(6):before { content: "HSW_CNT"; }
+td:nth-of-type(7):before { content: "CTP_CNT"; }
+td:nth-of-type(8):before { content: "RRC_CNT"; }
+td:nth-of-type(9):before { content: "YHO_CNT"; }
+td:nth-of-type(10):before { content: "SHO_CNT"; }
+td:nth-of-type(11):before { content: "IHO_CNT"; }
+td:nth-of-type(12):before { content: "CTW_CNT"; }
+td:nth-of-type(13):before { content: "CPI_CNT"; }
+td:nth-of-type(14):before { content: "L3I_CNT"; }
+td:nth-of-type(15):before { content: "PKT_CNT"; }
   }
   
   /* Smartphones (portrait and landscape) ----------- */
@@ -88,31 +89,12 @@ td:nth-of-type(14):before { content: "PKT_CNT"; }
   
   </style>
   <!--<![endif]-->
-<script type="text/javascript">
-
-lsearch = function(){
-  //this.term = document.getElementById('S').value.toUpperCase();
-  var s = document.getElementById('search').value.toLowerCase();
-  rows = document.getElementById('data').getElementsByTagName('TR');
-  for(var i=0;i<rows.length;i++){
-    if (s =="" ){
-      rows[i].style.display ='';
-    } else if ( rows[i].innerText.toLowerCase().indexOf(s) != -1 ) {
-      rows[i].style.display ='';
-    } else {
-      rows[i].style.display ='none';
-    }
-  }
-  this.time = false;
-}
-
-</script>
 </head>
 
 <body>
-<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="lsearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
 <table><thead><tr>	<th>FECHA</th>
 	<th>OSSRC</th>
+	<th>CANTIDAD</th>
 	<th>SRL_CNT</th>
 	<th>TRF_CNT</th>
 	<th>CRS_CNT</th>
@@ -130,412 +112,436 @@ lsearch = function(){
 <tbody id="data">
 
 	<tr>
-<td>10.03.2016 00</td>
+<td>16.03.2016 00</td>
 <td>OSSRC2</td>
-<td>17172</td>
-<td>16947</td>
-<td>17199</td>
-<td>16731</td>
-<td>17814</td>
-<td>17242</td>
-<td>17750</td>
-<td>17851</td>
-<td>4436</td>
-<td>16731</td>
-<td>17518</td>
-<td>16957</td>
-<td>17854</td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>5020</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 01</td>
+<td>16.03.2016 01</td>
 <td>OSSRC2</td>
-<td>17578</td>
-<td>17548</td>
-<td>17880</td>
-<td>18081</td>
-<td>18008</td>
-<td>17664</td>
-<td>17853</td>
-<td>17575</td>
-<td>3229</td>
-<td>18081</td>
-<td>17871</td>
-<td>17562</td>
-<td>18048</td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3548</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 02</td>
+<td>16.03.2016 02</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>17934</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>2153</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>18044</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>2277</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 03</td>
+<td>16.03.2016 03</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>1522</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>18078</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>1453</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 04</td>
+<td>16.03.2016 04</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>1196</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>1203</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 05</td>
+<td>16.03.2016 05</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>18069</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>1747</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>1717</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 06</td>
+<td>16.03.2016 06</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>3357</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3492</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 07</td>
+<td>16.03.2016 07</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>5013</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>5434</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 08</td>
+<td>16.03.2016 08</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>5915</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6590</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 09</td>
+<td>16.03.2016 09</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6363</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7090</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 10</td>
+<td>16.03.2016 10</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6511</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7320</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 11</td>
+<td>16.03.2016 11</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6613</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7349</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 12</td>
+<td>16.03.2016 12</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6557</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7355</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 13</td>
+<td>16.03.2016 13</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6389</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7117</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 14</td>
+<td>16.03.2016 14</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6189</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6701</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 15</td>
+<td>16.03.2016 15</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6073</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6570</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 16</td>
+<td>16.03.2016 16</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6335</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6827</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 17</td>
+<td>16.03.2016 17</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6503</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7057</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 18</td>
+<td>16.03.2016 18</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6666</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7138</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 19</td>
+<td>16.03.2016 19</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6661</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7163</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 20</td>
+<td>16.03.2016 20</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6605</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>7163</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 21</td>
+<td>16.03.2016 21</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6446</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6950</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 22</td>
+<td>16.03.2016 22</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>6117</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6567</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>10.03.2016 23</td>
+<td>16.03.2016 23</td>
 <td>OSSRC2</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td>5497</td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
-<td><strong><font color="green" face="Comic Sans MS" size=2> OK </font></strong></td>
+<td>19190</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6053</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 </tbody></table><!-- SQL:
 null--></body></html>

@@ -54,19 +54,20 @@
     */
 td:nth-of-type(0):before { content: "FECHA"; }
 td:nth-of-type(1):before { content: "OSSRC"; }
-td:nth-of-type(2):before { content: "SRL_CNT"; }
-td:nth-of-type(3):before { content: "TRF_CNT"; }
-td:nth-of-type(4):before { content: "CRS_CNT"; }
-td:nth-of-type(5):before { content: "HSW_CNT"; }
-td:nth-of-type(6):before { content: "CTP_CNT"; }
-td:nth-of-type(7):before { content: "RRC_CNT"; }
-td:nth-of-type(8):before { content: "YHO_CNT"; }
-td:nth-of-type(9):before { content: "SHO_CNT"; }
-td:nth-of-type(10):before { content: "IHO_CNT"; }
-td:nth-of-type(11):before { content: "CTW_CNT"; }
-td:nth-of-type(12):before { content: "CPI_CNT"; }
-td:nth-of-type(13):before { content: "L3I_CNT"; }
-td:nth-of-type(14):before { content: "PKT_CNT"; }
+td:nth-of-type(2):before { content: "CANTIDAD"; }
+td:nth-of-type(3):before { content: "SRL_CNT"; }
+td:nth-of-type(4):before { content: "TRF_CNT"; }
+td:nth-of-type(5):before { content: "CRS_CNT"; }
+td:nth-of-type(6):before { content: "HSW_CNT"; }
+td:nth-of-type(7):before { content: "CTP_CNT"; }
+td:nth-of-type(8):before { content: "RRC_CNT"; }
+td:nth-of-type(9):before { content: "YHO_CNT"; }
+td:nth-of-type(10):before { content: "SHO_CNT"; }
+td:nth-of-type(11):before { content: "IHO_CNT"; }
+td:nth-of-type(12):before { content: "CTW_CNT"; }
+td:nth-of-type(13):before { content: "CPI_CNT"; }
+td:nth-of-type(14):before { content: "L3I_CNT"; }
+td:nth-of-type(15):before { content: "PKT_CNT"; }
   }
   
   /* Smartphones (portrait and landscape) ----------- */
@@ -88,31 +89,12 @@ td:nth-of-type(14):before { content: "PKT_CNT"; }
   
   </style>
   <!--<![endif]-->
-<script type="text/javascript">
-
-lsearch = function(){
-  //this.term = document.getElementById('S').value.toUpperCase();
-  var s = document.getElementById('search').value.toLowerCase();
-  rows = document.getElementById('data').getElementsByTagName('TR');
-  for(var i=0;i<rows.length;i++){
-    if (s =="" ){
-      rows[i].style.display ='';
-    } else if ( rows[i].innerText.toLowerCase().indexOf(s) != -1 ) {
-      rows[i].style.display ='';
-    } else {
-      rows[i].style.display ='none';
-    }
-  }
-  this.time = false;
-}
-
-</script>
 </head>
 
 <body>
-<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="lsearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
 <table><thead><tr>	<th>FECHA</th>
 	<th>OSSRC</th>
+	<th>CANTIDAD</th>
 	<th>SRL_CNT</th>
 	<th>TRF_CNT</th>
 	<th>CRS_CNT</th>
@@ -130,161 +112,135 @@ lsearch = function(){
 <tbody id="data">
 
 	<tr>
-<td>07.03.2016 00</td>
+<td>16.03.2016 00</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22353</td>
-<td>22532</td>
+<td>21840</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22165</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>4293</td>
+<td>22534</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22101</td>
+<td>4820</td>
+<td>21852</td>
+<td>22481</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 01</td>
+<td>16.03.2016 01</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>21834</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22507</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22017</td>
+<td>21973</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>2858</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22060</td>
+<td>3218</td>
+<td>21846</td>
+<td>22355</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 02</td>
+<td>16.03.2016 02</td>
 <td>OSSRC3</td>
-<td>22516</td>
-<td>22503</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22460</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>21120</td>
-<td>22523</td>
-<td>1802</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>21995</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22514</td>
-	</tr>
-	<tr>
-<td>07.03.2016 03</td>
-<td>OSSRC3</td>
-<td>22485</td>
-<td>22499</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22461</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>21576</td>
-<td>22520</td>
-<td>1278</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>21942</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22500</td>
-	</tr>
-	<tr>
-<td>07.03.2016 04</td>
-<td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22523</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>21660</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>1202</td>
+<td>22088</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22034</td>
+<td>1842</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22279</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 05</td>
+<td>16.03.2016 03</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22039</td>
+<td>21924</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>1834</td>
+<td>1179</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22184</td>
+<td>22244</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 06</td>
+<td>16.03.2016 04</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22319</td>
+<td>21636</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>3464</td>
+<td>1081</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22352</td>
+<td>22302</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 07</td>
+<td>16.03.2016 05</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22524</td>
+<td>21954</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>5220</td>
+<td>1710</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22448</td>
+<td>22478</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 08</td>
+<td>16.03.2016 06</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>22588</td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>3288</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>6327</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22497</td>
+<td>22616</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 09</td>
+<td>16.03.2016 07</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
@@ -293,49 +249,142 @@ lsearch = function(){
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>6884</td>
+<td>5040</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22502</td>
+<td>22713</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 10</td>
+<td>16.03.2016 08</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22526</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>22226</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>7114</td>
+<td>6144</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 11</td>
+<td>16.03.2016 09</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22488</td>
+<td>22628</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>22272</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>7162</td>
-<td>22509</td>
+<td>6631</td>
+<td>22640</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 12</td>
+<td>16.03.2016 10</td>
 <td>OSSRC3</td>
+<td>23930</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22260</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6873</td>
+<td>22278</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>16.03.2016 11</td>
+<td>OSSRC3</td>
+<td>23930</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22227</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22685</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6845</td>
+<td>22239</td>
+<td>22519</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>16.03.2016 12</td>
+<td>OSSRC3</td>
+<td>23930</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22220</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22595</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6905</td>
+<td>22244</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>16.03.2016 13</td>
+<td>OSSRC3</td>
+<td>23930</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22617</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22569</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6839</td>
+<td>22623</td>
+<td>22728</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>16.03.2016 14</td>
+<td>OSSRC3</td>
+<td>23930</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22715</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>22571</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6675</td>
+<td>22733</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+	</tr>
+	<tr>
+<td>16.03.2016 15</td>
+<td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
@@ -344,32 +393,34 @@ lsearch = function(){
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>7189</td>
+<td>6642</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 13</td>
+<td>16.03.2016 16</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22512</td>
+<td>22715</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>7122</td>
-<td>22542</td>
+<td>6701</td>
+<td>22733</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 14</td>
+<td>16.03.2016 17</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
@@ -378,32 +429,16 @@ lsearch = function(){
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>6931</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-	</tr>
-	<tr>
-<td>07.03.2016 15</td>
-<td>OSSRC3</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22098</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>6915</td>
+<td>6774</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 16</td>
+<td>16.03.2016 18</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
@@ -412,15 +447,16 @@ lsearch = function(){
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>6955</td>
+<td>6993</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 17</td>
+<td>16.03.2016 19</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
@@ -429,15 +465,16 @@ lsearch = function(){
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>7076</td>
+<td>7026</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 18</td>
+<td>16.03.2016 20</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
@@ -446,94 +483,63 @@ lsearch = function(){
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>7012</td>
+<td>7292</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22533</td>
+<td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 19</td>
+<td>16.03.2016 21</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>22556</td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>7153</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>7014</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22532</td>
+<td>22694</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 20</td>
+<td>16.03.2016 22</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>22616</td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>6788</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>7000</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22490</td>
+<td>22673</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>
 	<tr>
-<td>07.03.2016 21</td>
+<td>16.03.2016 23</td>
 <td>OSSRC3</td>
+<td>23930</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>18815</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
+<td>22729</td>
 <td><strong><font color="green"> OK </font></strong></td>
-<td>22282</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>6890</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22447</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-	</tr>
-	<tr>
-<td>07.03.2016 22</td>
-<td>OSSRC3</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>6429</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22456</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-	</tr>
-	<tr>
-<td>07.03.2016 23</td>
-<td>OSSRC3</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22449</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>5646</td>
-<td><strong><font color="green"> OK </font></strong></td>
-<td>22323</td>
+<td>6039</td>
+<td>18851</td>
+<td>22571</td>
 <td><strong><font color="green"> OK </font></strong></td>
 <td><strong><font color="green"> OK </font></strong></td>
 	</tr>

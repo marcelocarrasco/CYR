@@ -1,0 +1,7 @@
+# WCELL
+wcell-enabled=1
+wcell-pct=0.05
+# BTS
+bts-enabled=1
+bts-pct=0.02
+

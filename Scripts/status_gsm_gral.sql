@@ -9,127 +9,113 @@ spool &6;
 with  OBJ as (
         SELECT /*+ materialize */ COUNT(DISTINCT ELEMENT_NAME) CANTIDAD
         FROM MULTIVENDOR_OBJECT2
-        WHERE ELEMENT_CLASS = 'WCELL'
+        WHERE ELEMENT_CLASS = 'BTS'
         AND VALID_FINISH_DATE > SYSDATE
         AND OSSRC = '&3'
         ) ,
       RFC as (
-        SELECT /*+ materialize */ FECHA
-          from CALIDAD_STATUS_REFERENCES
-         where FECHA between TO_DATE('&1', 'DD.MM.YYYY')
-                         AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
-       ) ,
-      SRL as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_SERVLEV_MNC1_RAW
+        SELECT FECHA
+          FROM CALIDAD_STATUS_REFERENCES
+         WHERE FECHA BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                         AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+       ),
+       TF2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_TRAFFIC_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     and TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
-           AND OSSRC = '&3'
-         group by PERIOD_START_TIME
-       ) ,
-      TRF as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_TRAFFIC_MNC1_RAW
-         WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
-           AND OSSRC = '&3'
-         group by PERIOD_START_TIME
-       ) ,
-      CRS as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_CELLRES_MNC1_RAW
-         WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
-           AND OSSRC = '&3'
-         group by PERIOD_START_TIME 
-       ) ,
-      HSW as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_HSDPAW_MNC1_RAW
-         WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
-           AND OSSRC = '&3'
-         GROUP BY PERIOD_START_TIME 
-       ) ,
-      CTP as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_CELLTP_MNC1_RAW
-         WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                    /* AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-      RRC as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_RRC_MNC1_RAW
+       ),
+       HO2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_HO_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-      YHO as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_INTSYSHO_MNC1_RAW
+       ),
+       SR2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_SERVICE_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-      SHO as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_SOFTHO_MNC1_RAW
+       ),
+       RE2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_RESAVAIL_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-      IHO as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_INTERSHO_MNC1_RAW
+       ),
+       RC2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_RESACC_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                    /* AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-     CTW as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_CELTPW_MNC1_RAW
+       ),
+       FE2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_FER_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-      CPI as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_CPICHQ_MNC1_RAW
+       ),
+       CO2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_COD_SCH_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-      L3I as (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_L3IUB_MNC1_RAW
+       ),
+       PC2 as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_PCU_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
-       ) ,
-     PKT as  (
-        SELECT /*+ materialize */ PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
-          FROM UMTS_C_NSN_PKTCALL_MNC1_RAW
+       ),
+       QOS as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_QOSPCL_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                                     AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+                                    /* AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
-         group by PERIOD_START_TIME
+         GROUP BY PERIOD_START_TIME
+       ),
+       RXQ as (
+        SELECT PERIOD_START_TIME FECHA, COUNT(*) CANTIDAD
+          FROM GSM_C_NSN_RXQUAL_HOU2 --
+         WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                     AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
+           /*AND BSC_GID = '&BCS'*/
+           AND OSSRC = '&3'
+         GROUP BY PERIOD_START_TIME
        )
 select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
        '&3' OSSRC,
        to_char(OBJ.CANTIDAD) CANTIDAD,
        case  
-            when SRL.CANTIDAD is null then to_char(SRL.CANTIDAD)
-            when SRL.CANTIDAD = 0 then to_char(SRL.CANTIDAD)
-            when SRL.CANTIDAD not between &4 and &5 then to_char(SRL.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            when TF2.CANTIDAD is null then to_char(TF2.CANTIDAD)
+            when TF2.CANTIDAD = 0 then to_char(TF2.CANTIDAD)
+            when TF2.CANTIDAD not between &4 and &5 then to_char(TF2.CANTIDAD) -- fuera del %5 de tolerancia ej.
             else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -143,11 +129,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;' --valor de retorno si todo anda ok
-       end SRL_CNT,
+       end TF2_CNT,
        case
-          when TRF.CANTIDAD is null then to_char(TRF.CANTIDAD)
-          when TRF.CANTIDAD = 0 then to_char(TRF.CANTIDAD)
-          when TRF.CANTIDAD not between &4  and &5 then to_char(TRF.CANTIDAD)
+          when HO2.CANTIDAD is null then to_char(HO2.CANTIDAD)
+          when HO2.CANTIDAD = 0 then to_char(HO2.CANTIDAD)
+          when HO2.CANTIDAD not between &4  and &5 then to_char(HO2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -161,11 +147,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end TRF_CNT,
+      end HO2_CNT,
       case
-          when CRS.CANTIDAD is null then to_char(CRS.CANTIDAD)
-          when CRS.CANTIDAD = 0 then to_char(CRS.CANTIDAD)
-          when CRS.CANTIDAD not between &4 and &5 then to_char(CRS.CANTIDAD)
+          when SR2.CANTIDAD is null then to_char(SR2.CANTIDAD)
+          when SR2.CANTIDAD = 0 then to_char(SR2.CANTIDAD)
+          when SR2.CANTIDAD not between &4 and &5 then to_char(SR2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -179,11 +165,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end CRS_CNT,
+      end SR2_CNT,
       case
-          when HSW.CANTIDAD is null then to_char(HSW.CANTIDAD)
-          when HSW.CANTIDAD = 0 then to_char(HSW.CANTIDAD)
-          when HSW.CANTIDAD not between &4 and &5 then to_char(HSW.CANTIDAD)
+          when RE2.CANTIDAD is null then to_char(RE2.CANTIDAD)
+          when RE2.CANTIDAD = 0 then to_char(RE2.CANTIDAD)
+          when RE2.CANTIDAD not between &4 and &5 then to_char(RE2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -197,11 +183,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end HSW_CNT,
+      end RE2_CNT,
       case
-          when CTP.CANTIDAD is null then to_char(CTP.CANTIDAD)
-          when CTP.CANTIDAD = 0 then to_char(CTP.CANTIDAD)
-          when CTP.CANTIDAD not between &4 and &5 then to_char(CTP.CANTIDAD)
+          when RC2.CANTIDAD is null then to_char(RC2.CANTIDAD)
+          when RC2.CANTIDAD = 0 then to_char(RC2.CANTIDAD)
+          when RC2.CANTIDAD not between &4 and &5 then to_char(RC2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -215,11 +201,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end CTP_CNT,
+      end RC2_CNT,
       case
-          when RRC.CANTIDAD is null then to_char(RRC.CANTIDAD)
-          when RRC.CANTIDAD = 0 then to_char(RRC.CANTIDAD)
-          when RRC.CANTIDAD not between &4 and &5 then to_char(RRC.CANTIDAD)
+          when FE2.CANTIDAD is null then to_char(FE2.CANTIDAD)
+          when FE2.CANTIDAD = 0 then to_char(FE2.CANTIDAD)
+          when FE2.CANTIDAD not between &4 and &5 then to_char(FE2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -233,11 +219,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end RRC_CNT,
+      end FE2_CNT,
       case
-          when YHO.CANTIDAD is null then to_char(YHO.CANTIDAD)
-          when YHO.CANTIDAD = 0 then to_char(YHO.CANTIDAD)
-          when YHO.CANTIDAD not between &4 and &5 then to_char(YHO.CANTIDAD)
+          when CO2.CANTIDAD is null then to_char(CO2.CANTIDAD)
+          when CO2.CANTIDAD = 0 then to_char(CO2.CANTIDAD)
+          when CO2.CANTIDAD not between &4 and &5 then to_char(CO2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -251,11 +237,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end YHO_CNT,
+      end CO2_CNT,
       case
-          when SHO.CANTIDAD is null then to_char(SHO.CANTIDAD)
-          when SHO.CANTIDAD = 0 then to_char(SHO.CANTIDAD)
-          when SHO.CANTIDAD not between &4 and &5 then to_char(SHO.CANTIDAD)
+          when PC2.CANTIDAD is null then to_char(PC2.CANTIDAD)
+          when PC2.CANTIDAD = 0 then to_char(PC2.CANTIDAD)
+          when PC2.CANTIDAD not between &4 and &5 then to_char(PC2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -269,11 +255,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end SHO_CNT,
+      end PC2_CNT,
       case
-          when IHO.CANTIDAD is null then to_char(IHO.CANTIDAD)
-          when IHO.CANTIDAD = 0 then to_char(IHO.CANTIDAD)
-          when IHO.CANTIDAD not between &4 and &5 then to_char(IHO.CANTIDAD)
+          when QOS.CANTIDAD is null then to_char(QOS.CANTIDAD)
+          when QOS.CANTIDAD = 0 then to_char(QOS.CANTIDAD)
+          when QOS.CANTIDAD not between &4 and &5 then to_char(QOS.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -287,11 +273,11 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end IHO_CNT,
+      end QOS_CNT,
       case
-          when CTW.CANTIDAD is null then to_char(CTW.CANTIDAD)
-          when CTW.CANTIDAD = 0 then to_char(CTW.CANTIDAD)
-          when CTW.CANTIDAD not between &4 and &5 then to_char(CTW.CANTIDAD)
+          when RXQ.CANTIDAD is null then to_char(RXQ.CANTIDAD)
+          when RXQ.CANTIDAD = 0 then to_char(RXQ.CANTIDAD)
+          when RXQ.CANTIDAD not between &4 and &5 then to_char(RXQ.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -305,89 +291,29 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'lt;'
                       ||'/strong'
                       ||CHR(38)||'gt;'
-      end CTW_CNT,
-      case
-          when CPI.CANTIDAD is null then to_char(CPI.CANTIDAD)
-          when CPI.CANTIDAD = 0 then to_char(CPI.CANTIDAD)
-          when CPI.CANTIDAD not between &4 and &5 then to_char(CPI.CANTIDAD)
-          else chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="green"'
-                      ||CHR(38)||'gt;'
-                      ||' OK '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
-      end CPI_CNT,
-      case
-          when L3I.CANTIDAD is null then to_char(L3I.CANTIDAD)
-          when L3I.CANTIDAD = 0 then to_char(L3I.CANTIDAD)
-          when L3I.CANTIDAD not between &4 and &5 then to_char(L3I.CANTIDAD)
-          else chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="green"'
-                      ||CHR(38)||'gt;'
-                      ||' OK '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
-      end L3I_CNT,
-      case
-          when PKT.CANTIDAD is  null then to_char(PKT.CANTIDAD)
-          when PKT.CANTIDAD = 0 then to_char(PKT.CANTIDAD)
-          when PKT.CANTIDAD not between &4 and &5 then to_char(PKT.CANTIDAD)
-          else chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="green"'
-                      ||CHR(38)||'gt;'
-                      ||' OK '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
-      end PKT_CNT
+      end RXQ_CNT
 from    OBJ,
         RFC,
-        SRL,
-        TRF,
-        CRS,
-        HSW,
-        CTP,
-        RRC,
-        YHO,
-        SHO,
-        IHO,
-        CTW,
-        CPI,
-        L3I,
-        PKT
-where RFC.FECHA = SRL.FECHA (+)
-and   RFC.FECHA = TRF.FECHA (+)
-and   RFC.FECHA = CRS.FECHA (+)
-AND   RFC.FECHA = HSW.FECHA (+)
-AND RFC.FECHA = CTP.FECHA (+)
-AND RFC.FECHA = RRC.FECHA (+)
-AND RFC.FECHA = YHO.FECHA (+)
-AND RFC.FECHA = SHO.FECHA (+)
-AND RFC.FECHA = IHO.FECHA (+)
-AND RFC.FECHA = CTW.FECHA (+)
-AND RFC.FECHA = CPI.FECHA (+)
-AND RFC.FECHA = L3I.FECHA (+)
-and RFC.FECHA = PKT.FECHA (+)
+        TF2,
+        HO2,
+        SR2,
+        RE2,
+        RC2,
+        FE2,
+        CO2,
+        PC2,
+        QOS,
+        RXQ
+where RFC.FECHA = TF2.FECHA (+)
+and   RFC.FECHA = HO2.FECHA (+)
+and   RFC.FECHA = SR2.FECHA (+)
+AND   RFC.FECHA = RE2.FECHA (+)
+AND RFC.FECHA = RC2.FECHA (+)
+AND RFC.FECHA = FE2.FECHA (+)
+AND RFC.FECHA = CO2.FECHA (+)
+AND RFC.FECHA = PC2.FECHA (+)
+AND RFC.FECHA = QOS.FECHA (+)
+AND RFC.FECHA = RXQ.FECHA (+)
 ORDER BY RFC.FECHA;
 spool off
 exit;

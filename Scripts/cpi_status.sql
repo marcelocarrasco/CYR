@@ -19,10 +19,10 @@ from (
              case
                   when CPI.CANTIDAD is null then CPI.CANTIDAD
                   when CPI.CANTIDAD = 0 then CPI.CANTIDAD
-                  when CPI.CANTIDAD not between &4 and &5 then CPI.CANTIDAD
-                  else '-1'
+                  when CPI.CANTIDAD not between substr(&4,1,instr(&4,',',1)) and substr(&4,instr(&4,',',1)+1,length(&4)) then CPI.CANTIDAD
+                  else -1
               end CPI_CNT
       from    RFC,
               CPI
       where   RFC.FECHA = CPI.FECHA (+))
-where CPI_CNT != '1';
+where CPI_CNT != 1;

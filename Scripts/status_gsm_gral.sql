@@ -24,7 +24,6 @@ with  OBJ as (
           FROM GSM_C_NSN_TRAFFIC_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                    /* AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -33,7 +32,6 @@ with  OBJ as (
           FROM GSM_C_NSN_HO_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -42,7 +40,6 @@ with  OBJ as (
           FROM GSM_C_NSN_SERVICE_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -51,7 +48,6 @@ with  OBJ as (
           FROM GSM_C_NSN_RESAVAIL_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -60,7 +56,6 @@ with  OBJ as (
           FROM GSM_C_NSN_RESACC_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                    /* AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -69,7 +64,6 @@ with  OBJ as (
           FROM GSM_C_NSN_FER_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -78,7 +72,6 @@ with  OBJ as (
           FROM GSM_C_NSN_COD_SCH_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -87,7 +80,6 @@ with  OBJ as (
           FROM GSM_C_NSN_PCU_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                     /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -96,7 +88,6 @@ with  OBJ as (
           FROM GSM_C_NSN_QOSPCL_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-                                    /* AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        ),
@@ -105,7 +96,6 @@ with  OBJ as (
           FROM GSM_C_NSN_RXQUAL_HOU2 --
          WHERE PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
                                      AND TO_DATE('&2', 'DD.MM.YYYY')  + 86399/86400
-           /*AND BSC_GID = '&BCS'*/
            AND OSSRC = '&3'
          GROUP BY PERIOD_START_TIME
        )
@@ -115,7 +105,7 @@ select /*html*/ to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
        case  
             when TF2.CANTIDAD is null then to_char(TF2.CANTIDAD)
             when TF2.CANTIDAD = 0 then to_char(TF2.CANTIDAD)
-            when TF2.CANTIDAD not between &4 and &5 then to_char(TF2.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            when TF2.CANTIDAD not between &&4 and &&5 then to_char(TF2.CANTIDAD) -- fuera del %5 de tolerancia ej.
             else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'

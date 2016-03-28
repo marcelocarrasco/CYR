@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF8'>
+  
+  <title>Responsive Table</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <style>
+  * { 
+    margin: 0; 
+    padding: 0; 
+  }
+  body { 
+    font: 10px/1.4 Verdana, Serif; 
+  }
+  
+  /* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #9B9B9B; 
+    text-align: left; 
+  }
+  @media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute;top: -9999px;left: -9999px;}
+    tr { border: 1px solid #9B9B9B; }
+    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
+    
+    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
+    
+    /*
+    Label the data
+    */
+td:nth-of-type(0):before { content: "FECHA"; }
+td:nth-of-type(1):before { content: "OSSRC"; }
+td:nth-of-type(2):before { content: "CANTIDAD"; }
+td:nth-of-type(3):before { content: "TF2_CNT"; }
+td:nth-of-type(4):before { content: "HO2_CNT"; }
+td:nth-of-type(5):before { content: "SR2_CNT"; }
+td:nth-of-type(6):before { content: "RE2_CNT"; }
+td:nth-of-type(7):before { content: "RC2_CNT"; }
+td:nth-of-type(8):before { content: "FE2_CNT"; }
+td:nth-of-type(9):before { content: "CO2_CNT"; }
+td:nth-of-type(10):before { content: "PC2_CNT"; }
+td:nth-of-type(11):before { content: "QOS_CNT"; }
+td:nth-of-type(12):before { content: "RXQ_CNT"; }
+  }
+  
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    body { 
+      padding: 0; 
+      margin: 0; 
+      width: 320px; }
+    }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body { 
+      width: 495px; 
+    }
+  }
+  
+  </style>
+  <!--<![endif]-->
+</head>
+
+<body>
+<table><thead><tr>	<th>FECHA</th>
+	<th>OSSRC</th>
+	<th>CANTIDAD</th>
+	<th>TF2_CNT</th>
+	<th>HO2_CNT</th>
+	<th>SR2_CNT</th>
+	<th>RE2_CNT</th>
+	<th>RC2_CNT</th>
+	<th>FE2_CNT</th>
+	<th>CO2_CNT</th>
+	<th>PC2_CNT</th>
+	<th>QOS_CNT</th>
+	<th>RXQ_CNT</th>
+</tr></thead>
+<tbody id="data">
+
+	<tr>
+<td>27.03.2016 00</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>4033</td>
+<td>3919</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6082</td>
+<td>3378</td>
+<td>6860</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28541</td>
+<td>6205</td>
+	</tr>
+	<tr>
+<td>27.03.2016 01</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3514</td>
+<td>2481</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6117</td>
+<td>2550</td>
+<td>6858</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28412</td>
+<td>5626</td>
+	</tr>
+	<tr>
+<td>27.03.2016 02</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3151</td>
+<td>4296</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6142</td>
+<td>3049</td>
+<td>6834</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28358</td>
+<td>4865</td>
+	</tr>
+	<tr>
+<td>27.03.2016 03</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3025</td>
+<td>5192</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6149</td>
+<td>3809</td>
+<td>6822</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28308</td>
+<td>4843</td>
+	</tr>
+	<tr>
+<td>27.03.2016 04</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>2757</td>
+<td>5374</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6161</td>
+<td>3450</td>
+<td>6819</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28379</td>
+<td>4773</td>
+	</tr>
+	<tr>
+<td>27.03.2016 05</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>2838</td>
+<td>5173</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6084</td>
+<td>3793</td>
+<td>6766</td>
+<td>6871</td>
+<td>27778</td>
+<td>4786</td>
+	</tr>
+	<tr>
+<td>27.03.2016 06</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3217</td>
+<td>4976</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6155</td>
+<td>3556</td>
+<td>6845</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28118</td>
+<td>4997</td>
+	</tr>
+	<tr>
+<td>27.03.2016 07</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3576</td>
+<td>3645</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6157</td>
+<td>3223</td>
+<td>6862</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28005</td>
+<td>5453</td>
+	</tr>
+	<tr>
+<td>27.03.2016 08</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3743</td>
+<td>3146</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6129</td>
+<td>3188</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>31191</td>
+<td>5502</td>
+	</tr>
+	<tr>
+<td>27.03.2016 09</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>4010</td>
+<td>4537</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6069</td>
+<td>4290</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>31707</td>
+<td>6371</td>
+	</tr>
+	<tr>
+<td>27.03.2016 10</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3843</td>
+<td>5574</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6082</td>
+<td>4692</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>32279</td>
+<td>6175</td>
+	</tr>
+	<tr>
+<td>27.03.2016 11</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3880</td>
+<td>4716</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6054</td>
+<td>4235</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>32423</td>
+<td>6126</td>
+	</tr>
+	<tr>
+<td>27.03.2016 12</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3880</td>
+<td>4021</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6051</td>
+<td>3771</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34487</td>
+<td>6088</td>
+	</tr>
+	<tr>
+<td>27.03.2016 13</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3825</td>
+<td>5541</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6070</td>
+<td>4798</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34393</td>
+<td>6224</td>
+	</tr>
+	<tr>
+<td>27.03.2016 14</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3747</td>
+<td>4635</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6066</td>
+<td>4203</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34221</td>
+<td>6331</td>
+	</tr>
+	<tr>
+<td>27.03.2016 15</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3749</td>
+<td>4676</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6067</td>
+<td>4717</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34079</td>
+<td>6342</td>
+	</tr>
+	<tr>
+<td>27.03.2016 16</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3800</td>
+<td>5340</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6052</td>
+<td>4725</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34148</td>
+<td>6295</td>
+	</tr>
+	<tr>
+<td>27.03.2016 17</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3812</td>
+<td>5335</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6068</td>
+<td>4586</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34324</td>
+<td>6279</td>
+	</tr>
+	<tr>
+<td>27.03.2016 18</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3846</td>
+<td>5606</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6039</td>
+<td>4718</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34273</td>
+<td>6155</td>
+	</tr>
+	<tr>
+<td>27.03.2016 19</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3866</td>
+<td>3978</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6032</td>
+<td>3675</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34448</td>
+<td>6126</td>
+	</tr>
+	<tr>
+<td>27.03.2016 20</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3860</td>
+<td>4663</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6059</td>
+<td>4236</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34348</td>
+<td>6135</td>
+	</tr>
+	<tr>
+<td>27.03.2016 21</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3797</td>
+<td>5198</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6069</td>
+<td>4723</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>34007</td>
+<td>6211</td>
+	</tr>
+	<tr>
+<td>27.03.2016 22</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>4061</td>
+<td>4694</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6071</td>
+<td>4048</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>33784</td>
+<td>6263</td>
+	</tr>
+	<tr>
+<td>27.03.2016 23</td>
+<td>OSSRC3</td>
+<td>7301</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>3935</td>
+<td>5989</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>6080</td>
+<td>4982</td>
+<td>6865</td>
+<td><strong><font color="green"> OK </font></strong></td>
+<td>28363</td>
+<td>6243</td>
+	</tr>
+</tbody></table><!-- SQL:
+null--></body></html>

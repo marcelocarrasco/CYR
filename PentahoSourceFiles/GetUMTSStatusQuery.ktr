@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>testCopyFromResult</name>
+    <name>GetUMTSStatusQuery</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -66,24 +66,45 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2016&#x2f;03&#x2f;11 11&#x3a;27&#x3a;58.582</created_date>
+  <created_date>2016&#x2f;03&#x2f;30 12&#x3a;14&#x3a;31.015</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;03&#x2f;11 11&#x3a;27&#x3a;58.582</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+  <modified_date>2016&#x2f;03&#x2f;30 12&#x3a;14&#x3a;31.015</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>perdido.claro.amx</name>
+    <server>10.92.50.83</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>willy</database>
+    <port>1521</port>
+    <username>harriague</username>
+    <password>Encrypted 2be98afc86aa7f2ac8a2b9c59ffb59aff</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
-  <hop> <from>Get rows from result</from><to>Write to log</to><enabled>Y</enabled> </hop>
-  <hop> <from>Write to log</from><to>Execute QUERY</to><enabled>Y</enabled> </hop>
-  <hop> <from>Execute QUERY</from><to>Write to log 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Write to log 2</from><to>Execute a process</to><enabled>Y</enabled> </hop>
-  <hop> <from>Execute a process</from><to>Write to log 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get UMTS Status &#x26; Sed Query</from><to>Write to log</to><enabled>Y</enabled> </hop>
+  <hop> <from>Write to log</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Execute QUERY</name>
-    <type>ExecProcess</type>
+    <name>Copy rows to result</name>
+    <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -92,23 +113,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <processfield>QUERY</processfield>
-    <resultfieldname>Result</resultfieldname>
-    <errorfieldname>Error</errorfieldname>
-    <exitvaluefieldname>Exit</exitvaluefieldname>
-    <failwhennotsuccess>Y</failwhennotsuccess>
-    <outputlinedelimiter>,</outputlinedelimiter>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>464</xloc>
-      <yloc>112</yloc>
+      <xloc>542</xloc>
+      <yloc>171</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Execute a process</name>
-    <type>ExecProcess</type>
+    <name>Get UMTS Status &#x26; Sed Query</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -117,43 +132,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <processfield>SED_SCRIPT</processfield>
-    <resultfieldname>Result_output</resultfieldname>
-    <errorfieldname>Error_output</errorfieldname>
-    <exitvaluefieldname>Exit_value</exitvaluefieldname>
-    <failwhennotsuccess>Y</failwhennotsuccess>
-    <outputlinedelimiter>,</outputlinedelimiter>
+    <connection>perdido.claro.amx</connection>
+    <sql>SELECT &#x27;&#x2f;home&#x2f;oracle&#x2f;sqlcl&#x2f;bin&#x2f;sql -s harriague&#x2f;HARRIAGUE&#x40;PERDIDO &#x40;&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;Scripts&#x2f;status_umts_gral.sql &#x27;&#xa;  &#x7c;&#x7c;TO_CHAR&#x28;sysdate-1,&#x27;dd.mm.yyyy&#x27;&#x29;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c;TO_CHAR&#x28;sysdate-1,&#x27;dd.mm.yyyy&#x27;&#x29;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c; ossrc&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#x7c;&#x7c;&#x27;&#x27;&#x27;&#x27;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-SRL-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-TRF-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CRS-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-HSW-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CTP-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-RRC-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-YHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-SHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-IHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CTP-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CPI-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-L3I-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-PKT-PCT&#x7d;&#xa;  &#x7c;&#x7c;&#x27;&#x27;&#x27;&#x27;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c;&#x27;&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;Datos&#x2f;status_umts_gral_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html&#x27; as query,&#xa;  &#x27;sh &#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;Scripts&#x2f;replace_char_in_file.sh &#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;Datos&#x2f;status_umts_gral_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html&#x27; as sed_script&#xa;FROM&#xa;  &#x28;SELECT ELEMENT_CLASS,&#xa;    OSSRC,&#xa;    COUNT&#x28;DISTINCT element_name&#x29; AS CANTIDAD&#xa;  FROM MULTIVENDOR_OBJECT2&#xa;  WHERE ELEMENT_CLASS  IN &#x28;&#x27;WCELL&#x27;&#x29;&#xa;  AND VALID_FINISH_DATE &#x3e; SYSDATE&#xa;  GROUP BY ossrc,&#xa;    ELEMENT_CLASS&#xa;  &#x29;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>Y</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get rows from result</name>
-    <type>RowsFromResult</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>QUERY</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        </field>      <field>        <name>SED_SCRIPT</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        </field>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>96</xloc>
-      <yloc>112</yloc>
+      <xloc>190</xloc>
+      <yloc>171</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -175,72 +164,11 @@
       <limitRowsNumber>0</limitRowsNumber>
       <logmessage/>
     <fields>
-      <field>
-        <name>QUERY</name>
-        </field>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>288</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Write to log 2</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <limitRows>N</limitRows>
-      <limitRowsNumber>0</limitRowsNumber>
-      <logmessage/>
-    <fields>
-      <field>
-        <name>QUERY</name>
-        </field>
-      <field>
-        <name>SED_SCRIPT</name>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Write to log 3</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <limitRows>N</limitRows>
-      <limitRowsNumber>0</limitRowsNumber>
-      <logmessage/>
-    <fields>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>448</xloc>
-      <yloc>256</yloc>
+      <xloc>382</xloc>
+      <yloc>171</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

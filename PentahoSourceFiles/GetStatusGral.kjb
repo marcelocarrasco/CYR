@@ -66,11 +66,11 @@
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <set_logfile>Y</set_logfile>
+      <logfile>&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;PentahoLogs&#x2f;getUMTSStatusQueryTr</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
       <slave_server_name/>
@@ -99,11 +99,11 @@
       <exec_per_row>Y</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <set_logfile>Y</set_logfile>
+      <logfile>&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;PentahoLogs&#x2f;executeUMTSQueryTr</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
       <slave_server_name/>
@@ -142,11 +142,11 @@
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <set_logfile>Y</set_logfile>
+      <logfile>&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;PentahoLogs&#x2f;getGSMStatusQueryTr</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
       <slave_server_name/>
@@ -163,7 +163,7 @@
       <yloc>176</yloc>
       </entry>
     <entry>
-      <name>Execute GSM Query</name>
+      <name>Execute UMTS Query &#x28;2&#x29;</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -175,11 +175,11 @@
       <exec_per_row>Y</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <set_logfile>Y</set_logfile>
+      <logfile>&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;PentahoLogs&#x2f;executeUMTSQueryT</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
       <slave_server_name/>
@@ -208,11 +208,11 @@
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <set_logfile>Y</set_logfile>
+      <logfile>&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;PentahoLogs&#x2f;getLTEStatusQueryTr</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
       <slave_server_name/>
@@ -241,11 +241,11 @@
       <exec_per_row>Y</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
+      <set_logfile>Y</set_logfile>
+      <logfile>&#x2f;home&#x2f;oracle&#x2f;CYR&#x2f;PentahoLogs&#x2f;executeLTEQueryT</logfile>
+      <logext>log</logext>
+      <add_date>Y</add_date>
+      <add_time>Y</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
       <slave_server_name/>
@@ -301,7 +301,7 @@
     </hop>
     <hop>
       <from>Get GSM Status Query</from>
-      <to>Execute GSM Query</to>
+      <to>Execute UMTS Query &#x28;2&#x29;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -309,7 +309,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Execute GSM Query</from>
+      <from>Execute UMTS Query &#x28;2&#x29;</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

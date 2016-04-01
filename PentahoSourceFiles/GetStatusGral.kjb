@@ -163,7 +163,7 @@
       <yloc>176</yloc>
       </entry>
     <entry>
-      <name>Execute UMTS Query &#x28;2&#x29;</name>
+      <name>Execute GSM Query</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -301,7 +301,7 @@
     </hop>
     <hop>
       <from>Get GSM Status Query</from>
-      <to>Execute UMTS Query &#x28;2&#x29;</to>
+      <to>Execute GSM Query</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -309,7 +309,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Execute UMTS Query &#x28;2&#x29;</from>
+      <from>Execute GSM Query</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

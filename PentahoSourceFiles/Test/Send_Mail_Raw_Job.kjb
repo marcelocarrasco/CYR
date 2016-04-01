@@ -100,13 +100,13 @@
       <name>Mail</name>
       <description/>
       <type>MAIL</type>
-      <server>smtp.gmail.com</server>
+      <server>smtp.mail.yahoo.com</server>
       <port>465</port>
-      <destination>bcordoba&#x40;harriague.com</destination>
-      <destinationCc/>
+      <destination>bcordoba&#x40;harriague.com marceloacarrasco&#x40;gmail.com mcarrasco&#x40;harriague.com</destination>
+      <destinationCc>barbaracordobaq&#x40;gmail.com</destinationCc>
       <destinationBCc/>
-      <replyto>barbaracordobaq&#x40;gmail.com</replyto>
-      <replytoname>Barbara</replytoname>
+      <replyto>mcarrasco98&#x40;yahoo.com</replyto>
+      <replytoname>Marcelo Carrasco</replytoname>
       <subject>Reporte</subject>
       <include_date>Y</include_date>
       <contact_person/>
@@ -117,8 +117,8 @@
       <zip_name/>
       <use_auth>Y</use_auth>
       <use_secure_auth>Y</use_secure_auth>
-      <auth_user>barbaracordobaq&#x40;gmail.com</auth_user>
-      <auth_password>Encrypted 2dbe0dfad18ce978aa810af65dbdcff8b</auth_password>
+      <auth_user>mcarrasco98&#x40;yahoo.com</auth_user>
+      <auth_password>Encrypted 2be98afc86aa7f289aa1af92586c3ff8e</auth_password>
       <only_comment>Y</only_comment>
       <use_HTML>Y</use_HTML>
       <use_Priority>N</use_Priority>
@@ -127,7 +127,7 @@
       <importance>normal</importance>
       <sensitivity>normal</sensitivity>
       <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses>barbaracordobaq&#x40;gmail.com</replyToAddresses>
+      <replyToAddresses/>
       <filetypes>        <filetype>GENERAL</filetype>
       </filetypes>      <embeddedimages>
       </embeddedimages>

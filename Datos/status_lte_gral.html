@@ -1,403 +1,297 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset='UTF8'>
-  
-  <title>Responsive Table</title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <style>
-  * { 
-    margin: 0; 
-    padding: 0; 
-  }
-  body { 
-    font: 10px/1.4 Verdana, Serif; 
-  }
-  
-  /* 
-  Generic Styling, for Desktops/Laptops 
-  */
-  table { 
-    width: 100%; 
-    border-collapse: collapse; 
-  }
-  /* Zebra striping */
-  tr:nth-of-type(odd) { 
-    background: #eee; 
-  }
-  th { 
-    background: #333; 
-    color: white; 
-    font-weight: bold; 
-  }
-  td, th { 
-    padding: 6px; 
-    border: 1px solid #9B9B9B; 
-    text-align: left; 
-  }
-  @media 
-  only screen and (max-width: 760px),
-  (min-device-width: 768px) and (max-device-width: 1024px)  {
-    table, thead, tbody, th, td, tr { display: block; }
-    thead tr { position: absolute;top: -9999px;left: -9999px;}
-    tr { border: 1px solid #9B9B9B; }
-    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
-    
-    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
-    
-    /*
-    Label the data
-    */
-td:nth-of-type(0):before { content: "FECHA"; }
-td:nth-of-type(1):before { content: "CANTIDAD"; }
-td:nth-of-type(2):before { content: "AV_CNT"; }
-td:nth-of-type(3):before { content: "LD_CNT"; }
-td:nth-of-type(4):before { content: "LT_CNT"; }
-td:nth-of-type(5):before { content: "PSB_CNT"; }
-td:nth-of-type(6):before { content: "QDL_CNT"; }
-td:nth-of-type(7):before { content: "QUL_CNT"; }
-td:nth-of-type(8):before { content: "RC_CNT"; }
-td:nth-of-type(9):before { content: "EST_CNT"; }
-  }
-  
-  /* Smartphones (portrait and landscape) ----------- */
-  @media only screen
-  and (min-device-width : 320px)
-  and (max-device-width : 480px) {
-    body { 
-      padding: 0; 
-      margin: 0; 
-      width: 320px; }
-    }
-  
-  /* iPads (portrait and landscape) ----------- */
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    body { 
-      width: 495px; 
-    }
-  }
-  
-  </style>
-  <!--<![endif]-->
-</head>
-
-<body>
-<table><thead><tr>	<th>FECHA</th>
-	<th>CANTIDAD</th>
-	<th>AV_CNT</th>
-	<th>LD_CNT</th>
-	<th>LT_CNT</th>
-	<th>PSB_CNT</th>
-	<th>QDL_CNT</th>
-	<th>QUL_CNT</th>
-	<th>RC_CNT</th>
-	<th>EST_CNT</th>
-</tr></thead>
-<tbody id="data">
-
-	<tr>
-<td>04.04.2016</td>
-<td>&nbsp;</td>
-<td>3578 <-> 3800</td>
-<td>3578 <-> 3800</td>
-<td>3578 <-> 3800</td>
-<td>3578 <-> 3800</td>
-<td>3578 <-> 3800</td>
-<td>3578 <-> 3800</td>
-<td>3578 <-> 3800</td>
-<td>3578 <-> 3800</td>
-	</tr>
-	<tr>
-<td>04.04.2016 00</td>
-<td>3689</td>
-<td>3208</td>
-<td>3108</td>
-<td>3234</td>
-<td>3108</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 01</td>
-<td>3689</td>
-<td>3208</td>
-<td>3111</td>
-<td>3237</td>
-<td>3111</td>
-<td>3102</td>
-<td>3102</td>
-<td>3099</td>
-<td>3102</td>
-	</tr>
-	<tr>
-<td>04.04.2016 02</td>
-<td>3689</td>
-<td>3208</td>
-<td>3108</td>
-<td>3234</td>
-<td>3108</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 03</td>
-<td>3689</td>
-<td>3208</td>
-<td>3108</td>
-<td>3234</td>
-<td>3108</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 04</td>
-<td>3689</td>
-<td>3208</td>
-<td>3108</td>
-<td>3234</td>
-<td>3108</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 05</td>
-<td>3689</td>
-<td>3208</td>
-<td>3108</td>
-<td>3234</td>
-<td>3108</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 06</td>
-<td>3689</td>
-<td>3208</td>
-<td>3108</td>
-<td>3234</td>
-<td>3108</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 07</td>
-<td>3689</td>
-<td>3208</td>
-<td>3111</td>
-<td>3237</td>
-<td>3111</td>
-<td>3102</td>
-<td>3102</td>
-<td>3102</td>
-<td>3102</td>
-	</tr>
-	<tr>
-<td>04.04.2016 08</td>
-<td>3689</td>
-<td>3205</td>
-<td>3108</td>
-<td>3234</td>
-<td>3108</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 09</td>
-<td>3689</td>
-<td>3208</td>
-<td>3111</td>
-<td>3237</td>
-<td>3111</td>
-<td>3102</td>
-<td>3102</td>
-<td>3102</td>
-<td>3102</td>
-	</tr>
-	<tr>
-<td>04.04.2016 10</td>
-<td>3689</td>
-<td>3214</td>
-<td>3114</td>
-<td>3239</td>
-<td>3114</td>
-<td>3104</td>
-<td>3104</td>
-<td>3105</td>
-<td>3105</td>
-	</tr>
-	<tr>
-<td>04.04.2016 11</td>
-<td>3689</td>
-<td>3205</td>
-<td>3110</td>
-<td>3018</td>
-<td>3107</td>
-<td>3100</td>
-<td>3100</td>
-<td>3101</td>
-<td>3101</td>
-	</tr>
-	<tr>
-<td>04.04.2016 12</td>
-<td>3689</td>
-<td>3208</td>
-<td>3113</td>
-<td>3238</td>
-<td>3113</td>
-<td>3103</td>
-<td>3103</td>
-<td>3104</td>
-<td>3104</td>
-	</tr>
-	<tr>
-<td>04.04.2016 13</td>
-<td>3689</td>
-<td>3202</td>
-<td>3108</td>
-<td>3233</td>
-<td>3108</td>
-<td>3098</td>
-<td>3098</td>
-<td>3099</td>
-<td>3099</td>
-	</tr>
-	<tr>
-<td>04.04.2016 14</td>
-<td>3689</td>
-<td>3206</td>
-<td>3111</td>
-<td>3236</td>
-<td>3111</td>
-<td>3101</td>
-<td>3101</td>
-<td>3102</td>
-<td>3102</td>
-	</tr>
-	<tr>
-<td>04.04.2016 15</td>
-<td>3689</td>
-<td>3209</td>
-<td>3114</td>
-<td>3248</td>
-<td>3114</td>
-<td>3104</td>
-<td>3104</td>
-<td>3105</td>
-<td>3105</td>
-	</tr>
-	<tr>
-<td>04.04.2016 16</td>
-<td>3689</td>
-<td>3218</td>
-<td>3124</td>
-<td>3258</td>
-<td>3124</td>
-<td>3114</td>
-<td>3114</td>
-<td>3115</td>
-<td>3115</td>
-	</tr>
-	<tr>
-<td>04.04.2016 17</td>
-<td>3689</td>
-<td>3212</td>
-<td>3121</td>
-<td>3255</td>
-<td>3121</td>
-<td>3111</td>
-<td>3111</td>
-<td>3112</td>
-<td>3112</td>
-	</tr>
-	<tr>
-<td>04.04.2016 18</td>
-<td>3689</td>
-<td>3215</td>
-<td>3106</td>
-<td>3252</td>
-<td>3124</td>
-<td>3114</td>
-<td>3114</td>
-<td>3115</td>
-<td>3115</td>
-	</tr>
-	<tr>
-<td>04.04.2016 19</td>
-<td>3689</td>
-<td>3215</td>
-<td>3121</td>
-<td>3255</td>
-<td>3121</td>
-<td>3111</td>
-<td>3111</td>
-<td>3112</td>
-<td>3112</td>
-	</tr>
-	<tr>
-<td>04.04.2016 20</td>
-<td>3689</td>
-<td>3215</td>
-<td>3121</td>
-<td>3255</td>
-<td>3121</td>
-<td>3111</td>
-<td>3111</td>
-<td>3112</td>
-<td>3112</td>
-	</tr>
-	<tr>
-<td>04.04.2016 21</td>
-<td>3689</td>
-<td>3221</td>
-<td>3124</td>
-<td>3255</td>
-<td>3124</td>
-<td>3114</td>
-<td>3114</td>
-<td>3115</td>
-<td>3115</td>
-	</tr>
-	<tr>
-<td>04.04.2016 22</td>
-<td>3689</td>
-<td>3215</td>
-<td>3119</td>
-<td>3244</td>
-<td>3119</td>
-<td>3109</td>
-<td>3109</td>
-<td>3110</td>
-<td>3110</td>
-	</tr>
-	<tr>
-<td>04.04.2016 23</td>
-<td>3689</td>
-<td>3215</td>
-<td>3119</td>
-<td>3244</td>
-<td>3119</td>
-<td>3109</td>
-<td>3109</td>
-<td>3110</td>
-<td>3110</td>
-	</tr>
-</tbody></table><!-- SQL:
-null--></body></html>
+Error starting at line : 9 in command -
+WITH  OBJ as (
+                SELECT  CANTIDAD,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',1,INSTR('&3',',',1,1)-1),'999999.999'))) AV_LOW,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',1,INSTR('&3',',',1,1)-1),'999999.999'))) AV_HI,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,1)+1,INSTR('&3',',',1,2)-INSTR('&3',',',1,1)-1),'999999.999'))) LD_LOW ,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,1)+1,INSTR('&3',',',1,2)-INSTR('&3',',',1,1)-1),'999999.999'))) LD_HI,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,2)+1,INSTR('&3',',',1,3)-INSTR('&3',',',1,2)-1),'999999.999'))) LT_LOW,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,2)+1,INSTR('&3',',',1,3)-INSTR('&3',',',1,2)-1),'999999.999'))) LT_HI,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,3)+1,INSTR('&3',',',1,4)-INSTR('&3',',',1,3)-1),'999999.999'))) PSB_LOW,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,3)+1,INSTR('&3',',',1,4)-INSTR('&3',',',1,3)-1),'999999.999'))) PSB_HI,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,4)+1,INSTR('&3',',',1,5)-INSTR('&3',',',1,4)-1),'999999.999'))) QDL_LOW,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,4)+1,INSTR('&3',',',1,5)-INSTR('&3',',',1,4)-1),'999999.999'))) QDL_HI,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,5)+1,INSTR('&3',',',1,6)-INSTR('&3',',',1,5)-1),'999999.999'))) QUL_LOW,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,5)+1,INSTR('&3',',',1,6)-INSTR('&3',',',1,5)-1),'999999.999'))) QUL_HI,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,6)+1,INSTR('&3',',',1,7)-INSTR('&3',',',1,6)-1),'999999.999'))) RC_LOW,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,6)+1,INSTR('&3',',',1,7)-INSTR('&3',',',1,6)-1),'999999.999'))) RC_HI,
+                        ROUND(CANTIDAD -(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,7)+1),'999999.999'))) EST_LOW,
+                        ROUND(CANTIDAD +(CANTIDAD* TO_NUMBER(SUBSTR('&3',INSTR('&3',',',1,7)+1),'999999.999'))) EST_HI
+                FROM  (
+                      SELECT /*+ materialize */ COUNT(DISTINCT ELEMENT_NAME) CANTIDAD
+                      FROM MULTIVENDOR_OBJECT2
+                      WHERE ELEMENT_CLASS = 'LNCEL'
+                      AND VALID_FINISH_DATE > SYSDATE
+                      )),
+      RFC as  (
+                SELECT /*+ materialize */ FECHA
+                FROM CALIDAD_STATUS_REFERENCES
+                WHERE FECHA BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+              ),
+       AV as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LCELAV_MNC1_RAW r
+                WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                              AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              ),
+      LD  as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LCELLD_MNC1_RAW r
+                WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                             AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              ),
+      LT  as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LCELLT_MNC1_RAW R
+                WHERE R.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                             AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              ),
+      PSB as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LEPSB_MNC1_RAW r
+                WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                             AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              ),
+      QDL as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LPQDL_MNC1_RAW r
+                WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                             AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              ),
+      QUL as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LPQUL_MNC1_RAW r
+                WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                           AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              ),
+      RC  as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LRRC_MNC1_RAW r
+                WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                             AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              ),
+      EST as  (
+                SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
+                FROM NOKLTE_PS_LUEST_MNC1_RAW r
+                WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
+                                             AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
+              )
+select  /*html*/ to_char(sysdate-1,'dd.mm.yyyy') FECHA,
+        null CANTIDAD,
+        to_char(OBJ.AV_LOW)||' <-> '||to_char(OBJ.AV_HI) AV_CNT,
+        to_char(OBJ.LD_LOW)||' <-> '||to_char(OBJ.LD_HI) LD_CNT,
+        to_char(OBJ.LT_LOW)||' <-> '||to_char(OBJ.LT_HI) LT_CNT,
+        to_char(OBJ.PSB_LOW)||' <-> '||to_char(OBJ.PSB_HI) PSB_CNT,
+        to_char(OBJ.QDL_LOW)||' <-> '||to_char(OBJ.QDL_HI) QDL_CNT,
+        to_char(OBJ.QUL_LOW)||' <-> '||to_char(OBJ.QUL_HI) QUL_CNT,
+        to_char(OBJ.RC_LOW)||' <-> '||to_char(OBJ.RC_HI) RC_CNT,
+        to_char(OBJ.EST_LOW)||' <-> '||to_char(OBJ.EST_HI) EST_CNT
+from OBJ
+union
+SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
+        to_char(OBJ.CANTIDAD) CANTIDAD,
+        case  
+            when AV.CANTIDAD is null then
+                      to_char(AV.CANTIDAD)
+            when AV.CANTIDAD = 0 then
+                      to_char(AV.CANTIDAD)
+            when AV.CANTIDAD not between OBJ.AV_LOW and OBJ.AV_HI then
+                      to_char(AV.CANTIDAD)
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end AV_CNT,
+        case  
+            when LD.CANTIDAD is null then
+                      to_char(LD.CANTIDAD)
+            when LD.CANTIDAD = 0 then
+                      to_char(LD.CANTIDAD)
+            when LD.CANTIDAD not between OBJ.LD_LOW and OBJ.LD_HI then
+                      to_char(LD.CANTIDAD) -- fuera del % de tolerancia ej.
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end LD_CNT,
+        case  
+            when LT.CANTIDAD is null then
+                      to_char(LT.CANTIDAD)
+            when LT.CANTIDAD = 0 then
+                      to_char(LT.CANTIDAD)
+            when LT.CANTIDAD not between OBJ.LT_LOW and OBJ.LT_HI then
+                      to_char(LT.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end LT_CNT,
+        case  
+            when PSB.CANTIDAD is null then
+                      to_char(PSB.CANTIDAD)
+            when PSB.CANTIDAD = 0 then
+                      to_char(PSB.CANTIDAD)
+            when PSB.CANTIDAD not between OBJ.PSB_LOW and OBJ.PSB_HI then
+                      to_char(PSB.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end PSB_CNT,
+        case  
+            when QDL.CANTIDAD is null then
+                      to_char(QDL.CANTIDAD)
+            when QDL.CANTIDAD = 0 then 
+                      to_char(QDL.CANTIDAD)
+            when QDL.CANTIDAD not between OBJ.QDL_LOW and QDL_HI then
+                      to_char(QDL.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end QDL_CNT,
+        case  
+            when QUL.CANTIDAD is null then
+                        to_char(QUL.CANTIDAD)
+            when QUL.CANTIDAD = 0 then
+                        to_char(QUL.CANTIDAD)
+            when QUL.CANTIDAD not between OBJ.QUL_LOW and OBJ.QUL_HI then
+                        to_char(QUL.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end QUL_CNT,
+        case  
+            when RC.CANTIDAD is null then
+                      to_char(RC.CANTIDAD)
+            when RC.CANTIDAD = 0 then
+                      to_char(RC.CANTIDAD)
+            when RC.CANTIDAD not between OBJ.RC_LOW and OBJ.RC_HI then
+                      to_char(RC.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end RC_CNT,
+        case  
+            when EST.CANTIDAD is null then
+                      to_char(EST.CANTIDAD)
+            when EST.CANTIDAD = 0 then
+                      to_char(EST.CANTIDAD)
+            when EST.CANTIDAD not between OBJ.EST_LOW and OBJ.EST_HI then
+                      to_char(EST.CANTIDAD) -- fuera del %5 de tolerancia ej.
+            else chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      ||' OK '
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;' --valor de retorno si todo anda ok
+        end EST_CNT
+FROM  OBJ,
+      RFC,
+      AV,
+      LD,
+      LT,
+      PSB,
+      QDL,
+      QUL,
+      RC,
+      EST
+WHERE RFC.FECHA = AV.FECHA (+)
+AND RFC.FECHA = LD.FECHA (+)
+AND RFC.FECHA = LT.FECHA (+)
+AND RFC.FECHA = PSB.FECHA (+)
+AND RFC.FECHA = QDL.FECHA (+)
+AND RFC.FECHA = QUL.FECHA (+)
+AND RFC.FECHA = RC.FECHA (+)
+AND RFC.FECHA = EST.FECHA (+)
+ORDER BY FECHA
+Error report -
+ORA-00604: error occurred at recursive SQL level 1
+ORA-04031: unable to allocate 288 bytes of shared memory ("shared pool","NOKLTE_PS_LUEST_MNC1_RAWHARR...","partitioning d","table partition description")
+00604. 00000 -  "error occurred at recursive SQL level %s"
+*Cause:    An error occurred while processing a recursive SQL statement
+           (a statement applying to internal dictionary tables).
+*Action:   If the situation described in the next error on the stack
+           can be corrected, do so; otherwise contact Oracle Support.

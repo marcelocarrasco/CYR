@@ -100,12 +100,12 @@
       <name>Mail</name>
       <description/>
       <type>MAIL</type>
-      <server>smtp.mail.yahoo.com</server>
-      <port>465</port>
-      <destination>bcordoba&#x40;harriague.com marceloacarrasco&#x40;gmail.com mcarrasco&#x40;harriague.com</destination>
-      <destinationCc>barbaracordobaq&#x40;gmail.com</destinationCc>
+      <server>mailer.cti</server>
+      <port>25</port>
+      <destination>mcarrasco&#x40;harriague.com</destination>
+      <destinationCc/>
       <destinationBCc/>
-      <replyto>mcarrasco98&#x40;yahoo.com</replyto>
+      <replyto>highend._it&#x40;claro.com.ar</replyto>
       <replytoname>Marcelo Carrasco</replytoname>
       <subject>Reporte</subject>
       <include_date>Y</include_date>
@@ -115,7 +115,7 @@
       <include_files>Y</include_files>
       <zip_files>N</zip_files>
       <zip_name/>
-      <use_auth>Y</use_auth>
+      <use_auth>N</use_auth>
       <use_secure_auth>Y</use_secure_auth>
       <auth_user>mcarrasco98&#x40;yahoo.com</auth_user>
       <auth_password>Encrypted 2be98afc86aa7f289aa1af92586c3ff8e</auth_password>

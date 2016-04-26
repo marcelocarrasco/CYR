@@ -172,7 +172,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;calidad&#x2f;CYR&#x2f;PentahoSourceFiles&#x2f;Test&#x2f;ControlYReprocesoMainJob.kjb</filename>
+      <filename>&#x2f;calidad&#x2f;CYR&#x2f;PentahoSourceFiles&#x2f;Test&#x2f;Send_Mail_Raw_Job.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>

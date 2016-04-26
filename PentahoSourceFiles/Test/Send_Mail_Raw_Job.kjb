@@ -102,9 +102,9 @@
       <type>MAIL</type>
       <server>mailer.cti</server>
       <port>25</port>
-      <destination>mcarrasco&#x40;harriague.com</destination>
+      <destination>mcarrasco&#x40;harriague.com mheredia&#x40;claro.com.ar jalba&#x40;harriague.com alejandro.lazarte&#x40;claro.com.ar</destination>
       <destinationCc/>
-      <destinationBCc/>
+      <destinationBCc>mstuyck&#x40;claro.com.ar</destinationBCc>
       <replyto>highend._it&#x40;claro.com.ar</replyto>
       <replytoname>Marcelo Carrasco</replytoname>
       <subject>Reporte</subject>
@@ -116,7 +116,7 @@
       <zip_files>N</zip_files>
       <zip_name/>
       <use_auth>N</use_auth>
-      <use_secure_auth>Y</use_secure_auth>
+      <use_secure_auth>N</use_secure_auth>
       <auth_user>mcarrasco98&#x40;yahoo.com</auth_user>
       <auth_password>Encrypted 2be98afc86aa7f289aa1af92586c3ff8e</auth_password>
       <only_comment>Y</only_comment>

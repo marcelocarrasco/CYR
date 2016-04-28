@@ -102,12 +102,12 @@
       <type>MAIL</type>
       <server>mailer.cti</server>
       <port>25</port>
-      <destination>mcarrasco&#x40;harriague.com mheredia&#x40;claro.com.ar jalba&#x40;harriague.com alejandro.lazarte&#x40;claro.com.ar</destination>
+      <destination>&#x24;&#x7b;MAILING-LIST&#x7d;</destination>
       <destinationCc/>
-      <destinationBCc>mstuyck&#x40;claro.com.ar</destinationBCc>
+      <destinationBCc>&#x24;&#x7b;MAILING-LIST-BCC&#x7d;</destinationBCc>
       <replyto>highend._it&#x40;claro.com.ar</replyto>
       <replytoname>Marcelo Carrasco</replytoname>
-      <subject>Reporte</subject>
+      <subject>Reporte Nivel Raw</subject>
       <include_date>Y</include_date>
       <contact_person/>
       <contact_phone/>

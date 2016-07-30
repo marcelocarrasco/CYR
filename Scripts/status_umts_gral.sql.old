@@ -162,7 +162,7 @@ select  /*html*/ to_char(sysdate-1,'dd.mm.yyyy') FECHA,
         to_char(OBJ.RRC_LOW)||' <-> '||to_char(OBJ.RRC_HI) RRC_CNT,
         to_char(OBJ.YHO_LOW)||' <-> '||to_char(OBJ.YHO_HI) YHO_CNT,
         to_char(OBJ.SHO_LOW)||' <-> '||to_char(OBJ.SHO_HI) SHO_CNT,
-        'S/UMBRAL' IHO_CNT,
+        to_char(OBJ.IHO_LOW)||' <-> '||to_char(OBJ.IHO_HI) IHO_CNT,
         to_char(OBJ.CTW_LOW)||' <-> '||to_char(OBJ.CTW_HI) CTW_CNT,
         to_char(OBJ.CPI_LOW)||' <-> '||to_char(OBJ.CPI_HI) CPI_CNT,
         to_char(OBJ.L3I_LOW)||' <-> '||to_char(OBJ.L3I_HI) L3I_CNT,
@@ -174,19 +174,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
        to_char(OBJ.CANTIDAD) CANTIDAD,
        case  
             when SRL.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(SRL.CANTIDAD)
             when SRL.CANTIDAD = 0 then TO_CHAR(SRL.CANTIDAD)
             when SRL.CANTIDAD not between OBJ.SRL_LOW and OBJ.SRL_HI then 
                       to_char(SRL.CANTIDAD)-- fuera del %5 de tolerancia ej.
@@ -196,7 +184,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(SRL.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -206,19 +194,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
        end SRL_CNT,
        case
           when TRF.CANTIDAD is null then 
-                      chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                          to_char(TRF.CANTIDAD)
           when TRF.CANTIDAD = 0 then 
                           to_char(TRF.CANTIDAD)
           when TRF.CANTIDAD not between OBJ.TRF_LOW  and OBJ.TRF_HI then 
@@ -229,7 +205,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(TRF.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -239,19 +215,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end TRF_CNT,
       case
           when CRS.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(CRS.CANTIDAD)
           when CRS.CANTIDAD = 0 then 
                       to_char(CRS.CANTIDAD)
           when CRS.CANTIDAD not between OBJ.CRS_LOW and OBJ.CRS_HI then 
@@ -262,7 +226,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(CRS.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -272,19 +236,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end CRS_CNT,
       case
           when HSW.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(HSW.CANTIDAD)
           when HSW.CANTIDAD = 0 then 
                       to_char(HSW.CANTIDAD)
           when HSW.CANTIDAD not between OBJ.HSW_LOW and OBJ.HSW_HI then 
@@ -295,7 +247,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(HSW.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -305,19 +257,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end HSW_CNT,
       case
           when CTP.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(CTP.CANTIDAD)
           when CTP.CANTIDAD = 0 then 
                       to_char(CTP.CANTIDAD)
           when CTP.CANTIDAD not between OBJ.CTP_LOW and OBJ.CTP_HI then 
@@ -328,7 +268,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(CTP.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -338,19 +278,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end CTP_CNT,
       case
           when RRC.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(RRC.CANTIDAD)
           when RRC.CANTIDAD = 0 then 
                       to_char(RRC.CANTIDAD)
           when RRC.CANTIDAD not between OBJ.RRC_LOW and OBJ.RRC_HI then 
@@ -361,7 +289,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(RRC.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -371,19 +299,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end RRC_CNT,
       case
           when YHO.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(YHO.CANTIDAD)
           when YHO.CANTIDAD = 0 then 
                       to_char(YHO.CANTIDAD)
           when YHO.CANTIDAD not between OBJ.YHO_LOW and OBJ.YHO_HI then 
@@ -394,7 +310,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(YHO.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -404,19 +320,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end YHO_CNT,
       case
           when SHO.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(SHO.CANTIDAD)
           when SHO.CANTIDAD = 0 then 
                       to_char(SHO.CANTIDAD)
           when SHO.CANTIDAD not between OBJ.SHO_LOW and OBJ.SHO_HI then 
@@ -427,7 +331,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(SHO.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -437,30 +341,18 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end SHO_CNT,
       case
           when IHO.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(IHO.CANTIDAD)
           when IHO.CANTIDAD = 0 then 
                       to_char(IHO.CANTIDAD)
-          --when IHO.CANTIDAD not between OBJ.IHO_LOW and OBJ.IHO_HI then 
-                      --to_char(IHO.CANTIDAD)
+          when IHO.CANTIDAD not between OBJ.IHO_LOW and OBJ.IHO_HI then 
+                      to_char(IHO.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(IHO.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -470,19 +362,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end IHO_CNT,
       case
           when CTW.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(CTW.CANTIDAD)
           when CTW.CANTIDAD = 0 then 
                       to_char(CTW.CANTIDAD)
           when CTW.CANTIDAD not between OBJ.CTW_LOW and OBJ.CTW_HI then 
@@ -493,7 +373,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(CTW.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -503,19 +383,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end CTW_CNT,
       case
           when CPI.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(CPI.CANTIDAD)
           when CPI.CANTIDAD = 0 then 
                       to_char(CPI.CANTIDAD)
           when CPI.CANTIDAD not between OBJ.CPI_LOW and OBJ.CPI_HI then 
@@ -526,7 +394,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(CPI.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -536,19 +404,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end CPI_CNT,
       case
           when L3I.CANTIDAD is null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(L3I.CANTIDAD)
           when L3I.CANTIDAD = 0 then 
                       to_char(L3I.CANTIDAD)
           when L3I.CANTIDAD not between OBJ.L3I_LOW and OBJ.L3I_HI then 
@@ -559,7 +415,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(L3I.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'
@@ -569,19 +425,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
       end L3I_CNT,
       case
           when PKT.CANTIDAD is  null then 
-                       chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || ' S/VALOR '
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(PKT.CANTIDAD)
           when PKT.CANTIDAD = 0 then 
                       to_char(PKT.CANTIDAD)
           when PKT.CANTIDAD not between OBJ.PKT_LOW and OBJ.PKT_HI then 
@@ -592,7 +436,7 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       || chr(38)||'lt;'
                       || 'font color="green"'
                       ||CHR(38)||'gt;'
-                      ||to_char(PKT.CANTIDAD)
+                      ||' OK '
                       ||CHR(38)||'lt;'
                       ||'/font'
                       ||chr(38)||'gt;'

@@ -103,8 +103,8 @@
       <server>mailer.cti</server>
       <port>25</port>
       <destination>&#x24;&#x7b;MAILING-LIST&#x7d;</destination>
-      <destinationCc/>
-      <destinationBCc>&#x24;&#x7b;MAILING-LIST-BCC&#x7d;</destinationBCc>
+      <destinationCc>&#x24;&#x7b;MAILING-LIST-BCC&#x7d;</destinationCc>
+      <destinationBCc/>
       <replyto>highend._it&#x40;claro.com.ar</replyto>
       <replytoname>Marcelo Carrasco</replytoname>
       <subject>Reporte Nivel Raw</subject>

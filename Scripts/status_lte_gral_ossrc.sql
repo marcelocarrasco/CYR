@@ -41,8 +41,8 @@ WITH  OBJ as (
                 SELECT /*+ materialize */ TRUNC(R.PERIOD_START_TIME, 'HH24') FECHA, COUNT(*) CANTIDAD
                 FROM NOKLTE_PS_LCELAV_MNC1_RAW r
                 WHERE r.PERIOD_START_TIME BETWEEN TO_DATE('&1', 'DD.MM.YYYY')
-                AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400 
-                AND OSSRC = '&3'
+                AND TO_DATE('&2', 'DD.MM.YYYY') + 86399/86400
+                AND OSSRC = '&3'                              
                 GROUP BY TRUNC(R.PERIOD_START_TIME, 'HH24')
               ),
       LD  as  (
@@ -135,19 +135,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when AV.CANTIDAD = 0 then
                       to_char(AV.CANTIDAD)
             when AV.CANTIDAD not between OBJ.AV_LOW and OBJ.AV_HI then
-                      chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(AV.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(AV.CANTIDAD)
             when AV.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
                       chr(38)||'lt;'
                       || 'strong'
@@ -194,19 +182,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when LD.CANTIDAD = 0 then
                       to_char(LD.CANTIDAD)
             when LD.CANTIDAD not between OBJ.LD_LOW and OBJ.LD_HI then
-                      chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(LD.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(LD.CANTIDAD) -- fuera del % de tolerancia ej.
             when LD.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
                       chr(38)||'lt;'
                       || 'strong'
@@ -253,19 +229,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when LT.CANTIDAD = 0 then
                       to_char(LT.CANTIDAD)
             when LT.CANTIDAD not between OBJ.LT_LOW and OBJ.LT_HI then
-                      chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(LT.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(LT.CANTIDAD) -- fuera del %5 de tolerancia ej.
              when LT.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
                       chr(38)||'lt;'
                       || 'strong'
@@ -312,19 +276,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when PSB.CANTIDAD = 0 then
                       to_char(PSB.CANTIDAD)
             when PSB.CANTIDAD not between OBJ.PSB_LOW and OBJ.PSB_HI then
-                      chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(PSB.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(PSB.CANTIDAD) -- fuera del %5 de tolerancia ej.
             when PSB.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
                       chr(38)||'lt;'
                       || 'strong'
@@ -371,19 +323,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when QDL.CANTIDAD = 0 then 
                       to_char(QDL.CANTIDAD)
             when QDL.CANTIDAD not between OBJ.QDL_LOW and QDL_HI then
-                      chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(QDL.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(QDL.CANTIDAD) -- fuera del %5 de tolerancia ej.
             when QDL.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
                       chr(38)||'lt;'
                       || 'strong'
@@ -430,19 +370,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when QUL.CANTIDAD = 0 then
                         to_char(QUL.CANTIDAD)
             when QUL.CANTIDAD not between OBJ.QUL_LOW and OBJ.QUL_HI then
-                        chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(QUL.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                        to_char(QUL.CANTIDAD) -- fuera del %5 de tolerancia ej.
             when QUL.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
                       chr(38)||'lt;'
                       || 'strong'
@@ -489,19 +417,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when RC.CANTIDAD = 0 then
                       to_char(RC.CANTIDAD)
             when RC.CANTIDAD not between OBJ.RC_LOW and OBJ.RC_HI then
-                        chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(RC.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(RC.CANTIDAD) -- fuera del %5 de tolerancia ej.
             when RC.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then -- cantidad mayor o igual al 90% de la cantidad total
                       chr(38)||'lt;'
                       || 'strong'
@@ -548,19 +464,7 @@ SELECT  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when EST.CANTIDAD = 0 then
                       to_char(EST.CANTIDAD)
             when EST.CANTIDAD not between OBJ.EST_LOW and OBJ.EST_HI then
-                      chr(38)||'lt;'
-                      || 'strong'
-                      ||CHR(38)||'gt;'
-                      || chr(38)||'lt;'
-                      || 'font color="red"'
-                      ||CHR(38)||'gt;'
-                      || to_char(EST.CANTIDAD)
-                      ||CHR(38)||'lt;'
-                      ||'/font'
-                      ||chr(38)||'gt;'
-                      ||CHR(38)||'lt;'
-                      ||'/strong'
-                      ||CHR(38)||'gt;'
+                      to_char(EST.CANTIDAD) -- fuera del %5 de tolerancia ej.
             when EST.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then -- cantidad mayor o igual al 90% de la cantidad total
                       chr(38)||'lt;'
                       || 'strong'

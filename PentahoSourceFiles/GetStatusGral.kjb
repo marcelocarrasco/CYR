@@ -67,7 +67,7 @@
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>Y</set_logfile>
-      <logfile>&#x2f;calidad&#x2f;CYR&#x2f;PentahoLogs&#x2f;getUMTSStatusQueryTr</logfile>
+      <logfile>&#x24;&#x7b;CYR-HOME&#x7d;&#x2f;PentahoLogs&#x2f;getUMTSStatusQueryTr</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -84,7 +84,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>336</xloc>
-      <yloc>48</yloc>
+      <yloc>16</yloc>
       </entry>
     <entry>
       <name>Execute UMTS Query</name>
@@ -100,7 +100,7 @@
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>Y</set_logfile>
-      <logfile>&#x2f;calidad&#x2f;CYR&#x2f;PentahoLogs&#x2f;executeUMTSQueryTr</logfile>
+      <logfile>&#x24;&#x7b;CYR-HOME&#x7d;&#x2f;PentahoLogs&#x2f;executeUMTSQueryTr</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -117,7 +117,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>544</xloc>
-      <yloc>48</yloc>
+      <yloc>16</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -127,7 +127,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>800</xloc>
-      <yloc>176</yloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>Get GSM Status Query</name>
@@ -143,7 +143,7 @@
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>Y</set_logfile>
-      <logfile>&#x2f;calidad&#x2f;CYR&#x2f;PentahoLogs&#x2f;getGSMStatusQueryTr</logfile>
+      <logfile>&#x24;&#x7b;CYR-HOME&#x7d;&#x2f;PentahoLogs&#x2f;getGSMStatusQueryTr</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -160,7 +160,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>336</xloc>
-      <yloc>176</yloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>Execute GSM Query</name>
@@ -176,7 +176,7 @@
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>Y</set_logfile>
-      <logfile>&#x2f;calidad&#x2f;CYR&#x2f;PentahoLogs&#x2f;executeUMTSQueryT</logfile>
+      <logfile>&#x24;&#x7b;CYR-HOME&#x7d;&#x2f;PentahoLogs&#x2f;executeUMTSQueryT</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -193,7 +193,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>544</xloc>
-      <yloc>176</yloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>Get LTE Status Query</name>
@@ -209,7 +209,7 @@
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>Y</set_logfile>
-      <logfile>&#x2f;calidad&#x2f;CYR&#x2f;PentahoLogs&#x2f;getLTEStatusQueryTr</logfile>
+      <logfile>&#x24;&#x7b;CYR-HOME&#x7d;&#x2f;PentahoLogs&#x2f;getLTEStatusQueryTr</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -226,7 +226,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>336</xloc>
-      <yloc>336</yloc>
+      <yloc>256</yloc>
       </entry>
     <entry>
       <name>Execute LTE Query</name>
@@ -242,7 +242,7 @@
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>Y</set_logfile>
-      <logfile>&#x2f;calidad&#x2f;CYR&#x2f;PentahoLogs&#x2f;executeLTEQueryT</logfile>
+      <logfile>&#x24;&#x7b;CYR-HOME&#x7d;&#x2f;PentahoLogs&#x2f;executeLTEQueryT</logfile>
       <logext>log</logext>
       <add_date>Y</add_date>
       <add_time>Y</add_time>
@@ -259,7 +259,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>544</xloc>
-      <yloc>336</yloc>
+      <yloc>256</yloc>
       </entry>
   </entries>
   <hops>

@@ -76,13 +76,13 @@
   </notepads>
   <connection>
     <name>perdido.claro.amx</name>
-    <server>10.92.50.83</server>
+    <server>&#x24;&#x7b;DB-HOST&#x7d;</server>
     <type>ORACLE</type>
     <access>Native</access>
-    <database>willy</database>
-    <port>1521</port>
-    <username>harriague</username>
-    <password>Encrypted 2be98afc86aa7f2ac8a2b9c59ffb59aff</password>
+    <database>&#x24;&#x7b;DB-NAME&#x7d;</database>
+    <port>&#x24;&#x7b;DB-PORT&#x7d;</port>
+    <username>&#x24;&#x7b;DB-USER&#x7d;</username>
+    <password>&#x24;&#x7b;DB-PASSWORD&#x7d;</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -90,7 +90,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;DB-PORT&#x7d;</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
@@ -133,7 +133,7 @@
            <schema_name/>
            </partitioning>
     <connection>perdido.claro.amx</connection>
-    <sql>SELECT &#x27;&#x2f;calidad&#x2f;sqlcl&#x2f;bin&#x2f;sql -s harriague&#x2f;HARRIAGUE&#x40;WILLY.WORLD &#x40;&#x2f;calidad&#x2f;CYR&#x2f;Scripts&#x2f;status_umts_gral.sql &#x27;&#xa;  &#x7c;&#x7c;TO_CHAR&#x28;sysdate-1,&#x27;dd.mm.yyyy&#x27;&#x29;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c;TO_CHAR&#x28;sysdate-1,&#x27;dd.mm.yyyy&#x27;&#x29;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c; ossrc&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#x7c;&#x7c;&#x27;&#x27;&#x27;&#x27;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-SRL-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-TRF-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CRS-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-HSW-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CTP-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-RRC-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-YHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-SHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-IHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CTP-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CPI-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-L3I-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-PKT-PCT&#x7d;&#xa;  &#x7c;&#x7c;&#x27;&#x27;&#x27;&#x27;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c;&#x27;&#x2f;calidad&#x2f;CYR&#x2f;Datos&#x2f;status_umts_gral_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html&#x27; as query,&#xa;  &#x27;sh &#x2f;calidad&#x2f;CYR&#x2f;Scripts&#x2f;replace_char_in_file.sh &#x2f;calidad&#x2f;CYR&#x2f;Datos&#x2f;status_umts_gral_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html &#x2f;calidad&#x2f;CYR&#x2f;Datos&#x2f;status_umts_table_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html&#x27; as sed_script&#xa;FROM&#xa;  &#x28;SELECT ELEMENT_CLASS,&#xa;    OSSRC,&#xa;    COUNT&#x28;DISTINCT element_name&#x29; AS CANTIDAD&#xa;  FROM MULTIVENDOR_OBJECT2&#xa;  WHERE ELEMENT_CLASS  IN &#x28;&#x27;WCELL&#x27;&#x29;&#xa;  AND VALID_FINISH_DATE &#x3e; SYSDATE&#xa;  GROUP BY ossrc,&#xa;    ELEMENT_CLASS&#xa;  &#x29;</sql>
+    <sql>SELECT &#x27;&#x24;&#x7b;CYR-ROOT&#x7d;&#x2f;sqlcl&#x2f;bin&#x2f;sql -s harriague&#x2f;HARRIAGUE&#x40;WILLY.WORLD &#x40;&#x24;&#x7b;CYR-HOME&#x7d;&#x2f;Scripts&#x2f;status_umts_gral.sql &#x27;&#xa;  &#x7c;&#x7c;TO_CHAR&#x28;sysdate-1,&#x27;dd.mm.yyyy&#x27;&#x29;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c;TO_CHAR&#x28;sysdate-1,&#x27;dd.mm.yyyy&#x27;&#x29;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c; ossrc&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#x7c;&#x7c;&#x27;&#x27;&#x27;&#x27;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-SRL-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-TRF-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CRS-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-HSW-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CTP-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-RRC-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-YHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-SHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-IHO-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CTP-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-CPI-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-L3I-PCT&#x7d;&#x7c;&#x7c;CHR&#x28;44&#x29;&#xa;  &#x7c;&#x7c;&#x24;&#x7b;WCELL-PKT-PCT&#x7d;&#xa;  &#x7c;&#x7c;&#x27;&#x27;&#x27;&#x27;&#xa;  &#x7c;&#x7c;&#x27; &#x27;&#xa;  &#x7c;&#x7c;&#x27;&#x24;&#x7b;CYR-DATA-DIRECTORY&#x7d;&#x2f;status_umts_gral_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html&#x27; as query,&#xa;  &#x27;sh &#x24;&#x7b;CYR-HOME&#x7d;&#x2f;Scripts&#x2f;replace_char_in_file.sh &#x24;&#x7b;CYR-DATA-DIRECTORY&#x7d;&#x2f;status_umts_gral_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html &#x24;&#x7b;CYR-DATA-DIRECTORY&#x7d;&#x2f;status_umts_table_&#x27;&#x7c;&#x7c;ossrc&#x7c;&#x7c;&#x27;.html&#x27; as sed_script&#xa;FROM&#xa;  &#x28;SELECT ELEMENT_CLASS,&#xa;    OSSRC,&#xa;    COUNT&#x28;DISTINCT element_name&#x29; AS CANTIDAD&#xa;  FROM MULTIVENDOR_OBJECT2&#xa;  WHERE ELEMENT_CLASS  IN &#x28;&#x27;WCELL&#x27;&#x29;&#xa;  AND VALID_FINISH_DATE &#x3e; SYSDATE&#xa;  GROUP BY ossrc,&#xa;    ELEMENT_CLASS&#xa;  &#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

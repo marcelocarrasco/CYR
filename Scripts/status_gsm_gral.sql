@@ -132,8 +132,8 @@ select  /*html*/ to_char(sysdate-1,'dd.mm.yyyy') FECHA,
         'S/UMBRAL' FE2_CNT,
         to_char(OBJ.CO2_LOW)||' <-> '||to_char(OBJ.CO2_HI) CO2_CNT,
         to_char(OBJ.PC2_LOW)||' <-> '||to_char(OBJ.PC2_HI) PC2_CNT,
-        to_char(OBJ.QOS_LOW)||' <-> '||to_char(OBJ.QOS_HI) QOS_CNT,
-        to_char(OBJ.RXQ_LOW)||' <-> '||to_char(OBJ.RXQ_HI) RXQ_CNT
+        'S/UMBRAL' QOS_CNT,
+        'S/UMBRAL' RXQ_CNT
 from OBJ
 union
 select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
@@ -157,12 +157,38 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
             when TF2.CANTIDAD = 0 then 
                       to_char(TF2.CANTIDAD)
             when TF2.CANTIDAD not between OBJ.TF2_LOW and OBJ.TF2_HI then
-                      to_char(TF2.CANTIDAD)
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="red"'
+                      ||CHR(38)||'gt;'
+                      || to_char(TF2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
+            when TF2.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      || to_char(TF2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
             else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="red"'
                       ||CHR(38)||'gt;'
                       || to_char(TF2.CANTIDAD)
                       ||CHR(38)||'lt;'
@@ -189,8 +215,6 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'gt;'
           when HO2.CANTIDAD = 0 then
                       to_char(HO2.CANTIDAD)
-          --when HO2.CANTIDAD not between OBJ.HO2_LOW  and OBJ.HO2_HI then
-                      --to_char(HO2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -223,12 +247,38 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
           when SR2.CANTIDAD = 0 then
                       to_char(SR2.CANTIDAD)
           when SR2.CANTIDAD not between OBJ.SR2_LOW and OBJ.SR2_HI then
-                      to_char(SR2.CANTIDAD)
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="red"'
+                      ||CHR(38)||'gt;'
+                      || to_char(SR2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
+          when SR2.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      || to_char(SR2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="red"'
                       ||CHR(38)||'gt;'
                       ||to_char(SR2.CANTIDAD)
                       ||CHR(38)||'lt;'
@@ -256,12 +306,38 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
           when RE2.CANTIDAD = 0 then
                       to_char(RE2.CANTIDAD)
           when RE2.CANTIDAD not between OBJ.RE2_LOW and OBJ.RE2_HI then
-                      to_char(RE2.CANTIDAD)
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="red"'
+                      ||CHR(38)||'gt;'
+                      || to_char(RE2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
+          when RE2.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      || to_char(RE2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="red"'
                       ||CHR(38)||'gt;'
                       ||to_char(RE2.CANTIDAD)
                       ||CHR(38)||'lt;'
@@ -289,12 +365,38 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
           when RC2.CANTIDAD = 0 then
                       to_char(RC2.CANTIDAD)
           when RC2.CANTIDAD not between OBJ.RC2_LOW and OBJ.RC2_HI then
-                      to_char(RC2.CANTIDAD)
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="red"'
+                      ||CHR(38)||'gt;'
+                      || to_char(RC2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
+          when RC2.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      || to_char(RC2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="red"'
                       ||CHR(38)||'gt;'
                       ||to_char(RC2.CANTIDAD)
                       ||CHR(38)||'lt;'
@@ -321,8 +423,6 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'gt;'
           when FE2.CANTIDAD = 0 then
                       to_char(FE2.CANTIDAD)
-          --when FE2.CANTIDAD not between OBJ.FE2_LOW and OBJ.FE2_HI then
-                      --to_char(FE2.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
@@ -355,12 +455,38 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
           when CO2.CANTIDAD = 0 then
                       to_char(CO2.CANTIDAD)
           when CO2.CANTIDAD not between OBJ.CO2_LOW and OBJ.CO2_HI then
-                      to_char(CO2.CANTIDAD)
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="red"'
+                      ||CHR(38)||'gt;'
+                      || to_char(CO2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
+          when CO2.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      || to_char(CO2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="red"'
                       ||CHR(38)||'gt;'
                       ||to_char(CO2.CANTIDAD)
                       ||CHR(38)||'lt;'
@@ -388,12 +514,38 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
           when PC2.CANTIDAD = 0 then
                       to_char(PC2.CANTIDAD)
           when PC2.CANTIDAD not between OBJ.PC2_LOW and OBJ.PC2_HI then
-                      to_char(PC2.CANTIDAD)
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="red"'
+                      ||CHR(38)||'gt;'
+                      || to_char(PC2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
+          when PC2.CANTIDAD >= ((OBJ.CANTIDAD)*90) /100 then
+                      chr(38)||'lt;'
+                      || 'strong'
+                      ||CHR(38)||'gt;'
+                      || chr(38)||'lt;'
+                      || 'font color="green"'
+                      ||CHR(38)||'gt;'
+                      || to_char(PC2.CANTIDAD)
+                      ||CHR(38)||'lt;'
+                      ||'/font'
+                      ||chr(38)||'gt;'
+                      ||CHR(38)||'lt;'
+                      ||'/strong'
+                      ||CHR(38)||'gt;'
           else chr(38)||'lt;'
                        || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="red"'
                       ||CHR(38)||'gt;'
                       ||to_char(PC2.CANTIDAD)
                       ||CHR(38)||'lt;'
@@ -420,13 +572,11 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'gt;'
           when QOS.CANTIDAD = 0 then
                       to_char(QOS.CANTIDAD)
-          when QOS.CANTIDAD not between OBJ.QOS_LOW and OBJ.QOS_HI then
-                      to_char(QOS.CANTIDAD)
           else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="black"'
                       ||CHR(38)||'gt;'
                       ||to_char(QOS.CANTIDAD)
                       ||CHR(38)||'lt;'
@@ -453,13 +603,11 @@ select  to_char(RFC.FECHA,'dd.mm.yyyy HH24') FECHA,
                       ||CHR(38)||'gt;'
           when RXQ.CANTIDAD = 0 then
                       to_char(RXQ.CANTIDAD)
-          when RXQ.CANTIDAD not between OBJ.RXQ_LOW and OBJ.RXQ_HI then
-                      to_char(RXQ.CANTIDAD)
-          else chr(38)||'lt;'
+         else chr(38)||'lt;'
                       || 'strong'
                       ||CHR(38)||'gt;'
                       || chr(38)||'lt;'
-                      || 'font color="#01DF01"'
+                      || 'font color="black"'
                       ||CHR(38)||'gt;'
                       ||to_char(RXQ.CANTIDAD)
                       ||CHR(38)||'lt;'
